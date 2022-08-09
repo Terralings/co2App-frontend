@@ -1,5 +1,6 @@
 import React from 'react';
 import './Dashboard.css';
+import Co2Emission from '../Co2Emission/Co2Emission';
 
 import {
 	Table,
@@ -35,9 +36,9 @@ function Dashboard(props) {
 							justifyContent: 'center',
 						}}>
 						<TableRow>
-							<TableCell>Text </TableCell>
+							<TableCell>6.8 </TableCell>
 
-							<TableCell>Text </TableCell>
+							<TableCell>Time </TableCell>
 						</TableRow>
 					</TableBody>
 				</Table>

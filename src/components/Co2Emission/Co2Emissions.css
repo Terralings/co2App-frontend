@@ -1,8 +1,12 @@
 .circleContainer{
+    display: flex; 
+    flex-direction: column;
     margin: 2% auto; 
     border-radius: 50%;
     border: 2px solid black; 
     width: 25em; 
     height: 25em;
+justify-content: center;    
+align-items: center;
 }
 

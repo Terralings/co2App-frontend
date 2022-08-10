@@ -5,6 +5,11 @@
 .hamburger-icon {
   background-color: transparent;
   border: none;
+  color: #01E2BA;
+}
+
+.hamburger-icon:hover {
+  cursor: pointer;
 }
 
 .App {
@@ -21,4 +26,3 @@
   width: 70vw;
   margin-left: 10%; 
 }
-

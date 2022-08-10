@@ -6,6 +6,7 @@ a {
     display: none;
     position: absolute;
     width: 253px;
+    z-index: 1;
 }
 
 .nav.active {
@@ -37,12 +38,22 @@ a {
 }
 
 .closebtn-container {
-    background-color: transparent;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: flex-start;
+    background-color: #01E2BA;
     border: none;
 }
 
 .closebtn {
     font-size: 36px;
+    background-color: transparent;
+    border: none;
+}
+
+.closebtn:hover {
+    cursor: pointer;
 }
 
 #closebtn {
@@ -77,3 +88,4 @@ a {
     align-items: flex-start;
     justify-content: space-around;
 }
+

@@ -12,6 +12,7 @@ import {
 	Paper,
 	Typography,
 } from '@mui/material';
+import { borders } from '@mui/system';
 
 function Dashboard(props) {
 	return (
@@ -19,26 +20,29 @@ function Dashboard(props) {
 			<h4>Past Trips</h4>
 			<TableContainer
 				className="tableContainer"
-				sx={{ maxWidth: '95%', boxShadow: 3 }}
+				sx={{
+					backgroundColor: 'black',
+					maxWidth: '95%',
+					boxShadow: 3,
+				}}
 				component={Paper}
 				align="center">
 				<Table aria-label="simple table">
-					<TableHead>
+					{/* <TableHead>
 						<TableRow>
 							<TableCell>Co2 Emissions:</TableCell>
 							<TableCell>Date:</TableCell>
 						</TableRow>
-					</TableHead>
+					</TableHead> */}
 
 					<TableBody
 						sx={{
-							color: 'text.primary',
-							justifyContent: 'center',
+							justifyContent: 'left',
 						}}>
 						<TableRow>
-							<TableCell>6.8 </TableCell>
+							<TableCell style={{ color: 'white' }}>6.8 CO2 </TableCell>
 
-							<TableCell>Time </TableCell>
+							<TableCell style={{ color: 'white' }}>Time </TableCell>
 						</TableRow>
 					</TableBody>
 				</Table>

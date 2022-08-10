@@ -8,9 +8,11 @@ function Navigation({ classState, handleClick }) {
         <div className={`${classState}` + ' nav'}>
             <nav className='nav-container'>
                 <div className ='top-nav'>
-                    <button className='closebtn-container' id='closebtn' onClick={handleClick}>
-                        <span className='closebtn'>&times;</span>
-                    </button>
+                    <div className='closebtn-container'>
+                        <button className='closebtn' id='closebtn' onClick={handleClick}>
+                            <span className='closebtn-icon'>&times;</span>
+                        </button>
+                    </div>
                     <div className='logo-container'>
                         <Link to='/'>
                             <img src='/Assets/BLACK_LOGO.png' alt="ZeroCarbon logo" className='darkLogo' 

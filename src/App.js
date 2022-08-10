@@ -17,7 +17,6 @@ function App() {
 	const [classState, setClassState] = useState('inactive');
 
 	function handleClick() {
-		console.log('hello testing');
 		setIsActive(!isActive);
 		if (isActive) {
 			setClassState('active');
@@ -159,6 +158,7 @@ function App() {
 						}
 					/>
 					<Route path="/dashboard" element={<Dashboard />} />
+					
 				</Routes>
 			</div>
 		</Container>

@@ -1,0 +1,84 @@
+* {
+    box-sizing:border-box
+}
+
+.mintLogo {
+    height: 60px;
+}
+
+.modal-container {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 2;
+}
+
+.modal-container .modal {
+    position: fixed;
+    background-color: #3a3a3a;
+    opacity: 100%;
+    padding: 20px 60px;
+    border-radius: 10px;
+    font-family: 'Inter', sans-serif;
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    filter: drop-shadow(0 0 30px #333);
+}
+
+.modal-buttons {
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.newtripBtn {
+    font-size: 16px;
+    background-color: #01E2BA;
+    border: black;
+    padding: 8px 33px;
+    border-radius: 13px;
+    box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.5);
+}
+
+.pasttripBtn {
+    font-size: 16px;
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 8px 33px;
+    border-radius: 13px;
+    box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.5);
+}
+
+.cancelBtn {
+    font-size: 16px;
+    background-color: transparent;
+    border: none;
+    color: white;
+}
+
+.modal-animation {
+    animation: .5s anim-lineUp ease-in;
+}
+
+@keyframes anim-lineUp {
+    0% {
+        transform: translateY(-15%);
+    }
+    50% {
+        transform: translateY(4%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}

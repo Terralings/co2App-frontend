@@ -37,12 +37,20 @@ a {
 }
 
 .closebtn-container {
-    background-color: transparent;
-    border: none;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: flex-start;
 }
 
 .closebtn {
     font-size: 36px;
+    background-color: transparent;
+    border: none;
+}
+
+.closebtn:hover {
+    cursor: pointer;
 }
 
 #closebtn {
@@ -77,3 +85,4 @@ a {
     align-items: flex-start;
     justify-content: space-around;
 }
+

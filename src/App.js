@@ -7,6 +7,7 @@ import About from "./components/About/About";
 import Co2Emission from "./components/Co2Emission/Co2Emission";
 import Dashboard from "./components/Dashboard/Dashboard";
 import axios from "axios";
+import Account from "./components/Account/Account";
 
 //FIREBASE STUFF;  MOVE IT TO RESPECTIVE LOCATION AFTERWARDS
 import { login, logout } from "../src/services/firebase";
@@ -18,7 +19,6 @@ function App() {
   const [classState, setClassState] = useState("inactive");
 
   function handleClick() {
-    console.log("hello testing");
     setIsActive(!isActive);
     if (isActive) {
       setClassState("active");
@@ -53,7 +53,7 @@ function App() {
       method: "post",
       url: "https://app.trycarbonapi.com/api/carTravel",
       headers: {
-        Authorization: `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiOTg5ZmZlNTk1ODQwNmVjZjIwY2E4ZjEwMmFlZmM5MzFjZjE2Y2NmNGJjNTY2OTUzNzljYzU0OGEwMzQ4MjNkYzJkZjUyYzc3YzdhZWNkYzEiLCJpYXQiOjE2NjAxNDY2MDQsIm5iZiI6MTY2MDE0NjYwNCwiZXhwIjoxNjkxNjgyNjA0LCJzdWIiOiIxMTc0Iiwic2NvcGVzIjpbXX0.oBd1kFxMKEDs9ifVrvnd61zNZdDdchSzyvdTgDVDFjAYvcjHgUp6sNcCHLJnHIg9cknRP8Za1HIlElQjTIwc3Q`,
+        Authorization: `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiODYxZWNhOGJhNzBlMTMxYWViZDM2MjBlZTI1ZWM1NmZmZDE0NmY5MDk0ODRmZDE2MmM0MDBjYmQ4MTc1ZjFkNjI2NWU1YjUxZWFhMjdiZjQiLCJpYXQiOjE2NjAxNTg4ODksIm5iZiI6MTY2MDE1ODg4OSwiZXhwIjoxNjkxNjk0ODg5LCJzdWIiOiIxMTk0Iiwic2NvcGVzIjpbXX0.IkWsem9cL74igbfAVFTrFFBSq-Jc-zPvqhi6qENCWA_sOtHUcvavaxHJBDFODjaWbDfZTKknYZ3Qv1dUQ8irxQ`,
         "Content-Type": "application/json",
       },
       data: {
@@ -95,7 +95,6 @@ function App() {
   };
 
   // CREATE ROUTE
-
   const createEntry = async () => {
     const token = await user.getIdToken();
     await fetch(URL, {
@@ -128,11 +127,6 @@ function App() {
       style={{ backgroundImage: "url(/Assets/image.png" }}
     >
       <div className="App">
-        {user ? (
-          <button onClick={logout}>Logout</button>
-        ) : (
-          <button onClick={login}>Login</button>
-        )}
         <header>
           <button className="hamburger-icon" onClick={handleClick}>
             <span className="material-symbols-outlined">menu</span>
@@ -164,6 +158,7 @@ function App() {
             }
           />
           <Route path="/about" element={<About />} />
+          <Route path="/account" element={<Account user={user} />} />
           <Route
             path="/co2emissions"
             element={

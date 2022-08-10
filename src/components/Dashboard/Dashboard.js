@@ -28,6 +28,7 @@ function Dashboard(props) {
 				component={Paper}
 				align="center">
 				<Table aria-label="simple table">
+					{/* Table Head for labeling row description */}
 					{/* <TableHead>
 						<TableRow>
 							<TableCell>Co2 Emissions:</TableCell>
@@ -39,6 +40,11 @@ function Dashboard(props) {
 						sx={{
 							justifyContent: 'left',
 						}}>
+						<TableRow>
+							<TableCell style={{ color: 'white' }}>6.8 CO2 </TableCell>
+
+							<TableCell style={{ color: 'white' }}>Time </TableCell>
+						</TableRow>
 						<TableRow>
 							<TableCell style={{ color: 'white' }}>6.8 CO2 </TableCell>
 

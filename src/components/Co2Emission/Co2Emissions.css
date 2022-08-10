@@ -1,15 +1,66 @@
+.Co2Body {
+    display: flex; 
+    flex-direction: column;
+    background-image: url("https://wallpaperaccess.com/full/4334504.jpg");
+    /* background-color: black; */
+    /* background-position: center; */
+        /* background-repeat: no-repeat; */
+        background-size: cover;
+    height: 80vh;
+ 
+}
+
 .circleContainer{
     display: flex; 
     flex-direction: column;
-    margin: 2% auto; 
-    border-radius: 50%;
-    border: 2px solid black; 
-    width: 20em; 
-    height: 20em;
+    margin: auto; 
+    width: 10em; 
+    height: 10em;
 justify-content: center;    
 align-items: center;
+
+    background-size: cover;
+    
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    margin: auto;
+}
+
+.gradient {
+    position: absolute;
+    z-index: 0;
+}
+
+.circleText{
+    color: #01E2BA; 
+    position: absolute;
+    z-index: 1; 
 }
 
 .section {
     color: #13E3C1;
+}
+
+.imgContainer {
+    position: relative;
+    text-align: center;
+    padding-top: 25px;
+
+}
+
+.circleContainer2{
+    position: absolute;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+
+}
+
+.buttonsContainer {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    margin-bottom: 30%; 
 }

@@ -7,6 +7,7 @@ import About from "./components/About/About";
 import Co2Emission from "./components/Co2Emission/Co2Emission";
 import Dashboard from "./components/Dashboard/Dashboard";
 import axios from "axios";
+import Account from "./components/Account/Account";
 
 //FIREBASE STUFF;  MOVE IT TO RESPECTIVE LOCATION AFTERWARDS
 import { login, logout } from "../src/services/firebase";
@@ -164,6 +165,7 @@ function App() {
 						}
 					/>
 					<Route path="/about" element={<About />} />
+           <Route path="/account" element={<Account user={user} />} />
 					<Route
 						path="/co2emissions"
 						element={

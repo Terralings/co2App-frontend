@@ -11,6 +11,20 @@ import { login, logout } from "../src/services/firebase";
 import { auth } from "./services/firebase";
 
 function App() {
+  const [isActive, setIsActive] = useState(true);
+  const [classState, setClassState] = useState('inactive');
+
+  function handleClick() {
+    console.log("hello testing");
+    setIsActive(!isActive);
+    if (isActive) {
+      setClassState('active');
+    } else {
+      setClassState('inactive');
+    }
+    return classState;
+  }
+
   const [user, setUser] = useState(null);
   const [entry, setEntry] = useState([]);
 
@@ -57,7 +71,14 @@ function App() {
       ) : (
         <div onClick={login}>Login</div>
       )}
-      <Navigation />
+      <header>
+        <button className='hamburger-icon' onClick={handleClick}>
+          <span className="material-symbols-outlined">
+            menu
+          </span>
+        </button>
+      </header>
+      <Navigation classState={classState} handleClick={handleClick}/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />

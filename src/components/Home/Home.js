@@ -1,8 +1,6 @@
 import { useState } from "react";
-import './Home.css'
 
 function Home(props) {
-
   //   const [newForm, setNewForm] = useState({
   //     // pointA: "",
   //     // pointB: "",
@@ -26,6 +24,7 @@ function Home(props) {
       ...props.newForm,
       [event.target.name]: event.target.value,
     });
+  };
 
   //   const handleSubmit = (event) => {
   //     event.preventDefault();
@@ -35,7 +34,7 @@ function Home(props) {
   return (
     <div>
       <section>
-        <h1 className="appName">Zero Carbon</h1>
+        <h1>Zero Carbon</h1>
         <form className="co2Form" onSubmit={props.handleCalcSubmit}>
           <div className="field-inline">
             <label for="date">
@@ -56,7 +55,6 @@ function Home(props) {
 
             <h2 className="form-label">Vehicle Type</h2>
             <select
-              className="dropdown"
               name={props.newForm.vehTypeInput}
               onChange={(event) =>
                 props.setNewForm({
@@ -101,7 +99,6 @@ function Home(props) {
           <div className="field-inline">
             <h2 className="form-label">Trip Distance(km)</h2>
             <input
-              className="userDistance"
               value={props.newForm.distance}
               onChange={handleVehChange}
               name="distance"
@@ -109,7 +106,6 @@ function Home(props) {
             />
           </div>
           {/* <div className="field-inline">
-
                             <h2 className='form-label'>Start Point</h2>
                             <input
                                 value={newForm.pointA}
@@ -129,13 +125,11 @@ function Home(props) {
                                 placeholder='(ex. 321 South Main Rd...)'
                             />
                         </div> */}
-
-          <input className="seeCarbonbutton" type="submit" value="See Your Carbon Footprint" />
+          <input type="submit" value="See Your Carbon Footprint" />
         </form>
       </section>
     </div>
   );
-
 }
 
 export default Home;

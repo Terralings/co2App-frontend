@@ -10,9 +10,10 @@ function Co2Emission(props) {
   //   const date = `
   //      ${current.getMonth() + 1}-${current.getDate()}-${current.getFullYear()}`;
 
-  const [modal, setModal] = useState(true);
+  const [modal, setModal] = useState(false);
 
   const saveResult = () => {
+    props.createEntry();
     setModal(true);
   };
 
@@ -40,7 +41,7 @@ function Co2Emission(props) {
 				<img className="circleContainer2" src="/assets/gradient.png" />
 			</div> */}
       <div className="buttonsContainer">
-        <Button color="primary" variant="contained" onClick={props.createEntry}>
+        <Button color="primary" variant="contained" onClick={saveResult}>
           Save Result
         </Button>
         <Button color="secondary" variant="contained" onClick={navigateToForm}>

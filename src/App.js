@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import "./App.css";
 import Navigation from "./components/Navigation/Navigation";
@@ -10,13 +11,14 @@ import axios from "axios";
 import Account from "./components/Account/Account";
 
 //FIREBASE STUFF;  MOVE IT TO RESPECTIVE LOCATION AFTERWARDS
-import { login, logout } from "../src/services/firebase";
-import { auth } from "./services/firebase";
-import { Container } from "@mui/material";
+import { login, logout } from '../src/services/firebase';
+import { auth } from './services/firebase';
+import { Container, Button } from '@mui/material';
 
 function App() {
 	const [isActive, setIsActive] = useState(true);
-	const [classState, setClassState] = useState("inactive");
+
+	const [classState, setClassState] = useState('inactive');
 
 
 	function handleClick() {
@@ -29,9 +31,9 @@ function App() {
 		return classState;
 	}
 
-
 	const [user, setUser] = useState(null);
 	const [entry, setEntry] = useState([]);
+
 
 	const URL = "https://zero-carbon-backend.herokuapp.com/home/";
 
@@ -129,6 +131,7 @@ function App() {
 			style={{ backgroundImage: "url(/Assets/image.png" }}
 		>
 			<div className="App">
+
 				<header>
 					<button className="hamburger-icon" onClick={handleClick}>
 						<span className="material-symbols-outlined">menu</span>
@@ -160,7 +163,9 @@ function App() {
 						}
 					/>
 					<Route path="/about" element={<About />} />
+
            <Route path="/account" element={<Account user={user} />} />
+
 					<Route
 						path="/co2emissions"
 						element={
@@ -184,6 +189,7 @@ function App() {
 					/>
 				</Routes>
 				{user ? (
+
 					<button className="logIn" onClick={logout}>Logout</button>
 				) : (
 					<button className="logIn" onClick={login}>Login</button>

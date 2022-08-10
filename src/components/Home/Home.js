@@ -1,36 +1,39 @@
-import { useState } from "react";
+import { useState } from 'react';
+import { Button } from '@mui/material';
 import "./Home.css"
 
+
 function Home(props) {
-  //   const [newForm, setNewForm] = useState({
-  //     // pointA: "",
-  //     // pointB: "",
-  //     vehTypeInput: "",
-  //     distance: "",
-  //   });
+	//   const [newForm, setNewForm] = useState({
+	//     // pointA: "",
+	//     // pointB: "",
+	//     vehTypeInput: "",
+	//     distance: "",
+	//   });
 
-  //   const handleChange = (event) => {
-  //     setNewForm({
-  //       ...newForm,
-  //       [event.target.name]: event.target.value,
-  //     });
-  //   };
+	//   const handleChange = (event) => {
+	//     setNewForm({
+	//       ...newForm,
+	//       [event.target.name]: event.target.value,
+	//     });
+	//   };
 
-  const handleDistChange = (event) => {
-    props.setDistInput(event.target.value);
-  };
-  const handleVehChange = (event) => {
-    // props.setVehTypeInput(event.target.value);
-    props.setNewForm({
-      ...props.newForm,
-      [event.target.name]: event.target.value,
-    });
-  };
+	const handleDistChange = (event) => {
+		props.setDistInput(event.target.value);
+	};
+	const handleVehChange = (event) => {
+		// props.setVehTypeInput(event.target.value);
+		props.setNewForm({
+			...props.newForm,
+			[event.target.name]: event.target.value,
+		});
+	};
 
-  //   const handleSubmit = (event) => {
-  //     event.preventDefault();
-  //     props.createEntry(newForm); //not sure about this one, need confirmation
-  //   };
+	//   const handleSubmit = (event) => {
+	//     event.preventDefault();
+	//     props.createEntry(newForm); //not sure about this one, need confirmation
+	//   };
+
 
   return (
     <div>
@@ -109,6 +112,7 @@ function Home(props) {
             />
           </div>
           {/* <div className="field-inline">
+
                             <h2 className='form-label'>Start Point</h2>
                             <input
                                 value={newForm.pointA}
@@ -128,6 +132,7 @@ function Home(props) {
                                 placeholder='(ex. 321 South Main Rd...)'
                             />
                         </div> */}
+
           <input className="seeCarbonbutton" type="submit" value="See Your Carbon Footprint" />
         </form>
       </section>

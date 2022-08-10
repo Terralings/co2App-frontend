@@ -1,6 +1,6 @@
 import React from 'react';
 import './About.css';
-import { BottomNavigation } from '@mui/material';
+import { Container } from '@mui/system';
 
 function About(props) {
 	return (
@@ -57,14 +57,14 @@ function About(props) {
 				</a>
 			</p>
 			{/* <h3> UX Designers</h3>
-			<li>Ernesto Fernandez</li>
-			<li>Lena Slone</li>
-			<h3>Software Engineers</h3>
-			<li>Marvin Merida </li>
-			<li>Jacky Cheng</li>
-			<li>Michelle McPherson</li>
-			<li>Peter Young</li>
-			<li>Sergio Laguardia</li> */}
+				<li>Ernesto Fernandez</li>
+				<li>Lena Slone</li>
+				<h3>Software Engineers</h3>
+				<li>Marvin Merida </li>
+				<li>Jacky Cheng</li>
+				<li>Michelle McPherson</li>
+				<li>Peter Young</li>
+				<li>Sergio Laguardia</li> */}
 			<footer className="aboutFooter">
 				<span> Ernesto Fernandez </span>
 				<span>Lena Slone</span>

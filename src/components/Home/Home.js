@@ -66,6 +66,7 @@ function Home(props) {
               <option
                 // onSelect={(e) => setNewForm(e.target.value)}
                 value="SmallDieselCar"
+                selected="selected"
               >
                 Compact Car
               </option>

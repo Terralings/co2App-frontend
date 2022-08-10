@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./Home.css"
 
 function Home(props) {
   //   const [newForm, setNewForm] = useState({
@@ -34,14 +35,14 @@ function Home(props) {
   return (
     <div>
       <section>
-        <h1>Zero Carbon</h1>
         <form className="co2Form" onSubmit={props.handleCalcSubmit}>
           <div className="field-inline">
             <label for="date">
               {" "}
-              <h2>Date</h2>
+              <h2 className="date-label">Date</h2>
             </label>
             <input
+              className="dateMenu"
               type="date"
               name="date"
               value="2022-08-10"
@@ -53,8 +54,9 @@ function Home(props) {
               }
             />
 
-            <h2 className="form-label">Vehicle Type</h2>
+            <h2 className="vehicle-label">Vehicle Type</h2>
             <select
+              className="dropdown"
               name={props.newForm.vehTypeInput}
               onChange={(event) =>
                 props.setNewForm({
@@ -97,8 +99,9 @@ function Home(props) {
             </select>
           </div>
           <div className="field-inline">
-            <h2 className="form-label">Trip Distance(km)</h2>
+            <h2 className="distance-label">Trip Distance(km)</h2>
             <input
+              className="userDistance"
               value={props.newForm.distance}
               onChange={handleVehChange}
               name="distance"
@@ -125,7 +128,7 @@ function Home(props) {
                                 placeholder='(ex. 321 South Main Rd...)'
                             />
                         </div> */}
-          <input type="submit" value="See Your Carbon Footprint" />
+          <input className="seeCarbonbutton" type="submit" value="See Your Carbon Footprint" />
         </form>
       </section>
     </div>

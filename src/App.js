@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 import Navigation from './components/Navigation/Navigation';
-import { Routes, Route, useNavigate, Navigate } from 'react-router-dom';
+import { Routes, Route, useNavigate, Navigate, Link } from 'react-router-dom';
 import Home from './components/Home/Home';
 import About from './components/About/About';
 import Co2Emission from './components/Co2Emission/Co2Emission';
@@ -130,6 +130,9 @@ function App() {
 					</button>
 				</header>
 				<Navigation classState={classState} handleClick={handleClick} />
+				<Link to="/">
+					<img className="homeLogo" src="/Assets/Logo_mint.png" />
+				</Link>
 				<Routes>
 					<Route
 						path="/"

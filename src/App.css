@@ -8,11 +8,16 @@
 }
 
 .App {
-  background-image: "url(/Assets/Image.png)";
+  /* background-image: "url(/Assets/Image.png)"; */
     background-size: cover;
     max-width: auto;
     background-position: center;
     background-repeat: no-repeat;
     height: 100vh;
     margin:auto;
+}
+
+.homeLogo {
+  width: 70vw;
+  margin-left: 10%; 
 }

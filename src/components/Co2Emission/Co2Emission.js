@@ -5,18 +5,19 @@ import Link from '@mui/material/Link';
 import { useNavigate, Navigate } from 'react-router-dom';
 
 function Co2Emission(props) {
-	const current = new Date();
-	const date = `
-	     ${current.getMonth() + 1}-${current.getDate()}-${current.getFullYear()}`;
 
-	const navigate = useNavigate();
+  //   const current = new Date();
+  //   const date = `
+  //      ${current.getMonth() + 1}-${current.getDate()}-${current.getFullYear()}`;
 
-	const navigateToForm = (e) => {
-		e.preventDefault();
-		navigate('/');
-	};
-	return (
-		<div className="Co2Body">
+  const navigate = useNavigate();
+
+  const navigateToForm = (e) => {
+    e.preventDefault();
+    navigate("/");
+  };
+  return (
+   	<div className="Co2Body">
 			<div className="circleContainer">
 				<p className="circleText"> {props.carbonInfo} Text </p>
 				<img src="/assets/gradient.png" className="gradient"></img>
@@ -31,23 +32,13 @@ function Co2Emission(props) {
 					Save Result
 				</Button>
 
-				<p>
-					<Button
-						color="secondary"
-						variant="contained"
-						onClick={navigateToForm}>
-						New Trip
-					</Button>
-				</p>
-			</div>
+      </Button>
 
-			<p>
-				<Link href="/about">Learn More</Link>
-			</p>
-
-			{props.user ? <button> Log Out</button> : <div></div>}
-		</div>
-	);
+      <p>
+        <Link href="/about">Learn More</Link>
+      </p>
+    </div>
+  );
 }
 
 export default Co2Emission;

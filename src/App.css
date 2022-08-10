@@ -7,6 +7,7 @@
   background-color: transparent;
   border: none;
   color: #01E2BA;
+  padding: 3%; 
 }
 
 .hamburger-icon:hover {
@@ -50,7 +51,7 @@ align-items: flex-start;
 padding: 8px 35px;
 gap: 8px;
 
-position: absolute;
+position: relative;
 width: 117px;
 height: 35px;
 left: 126.18px;

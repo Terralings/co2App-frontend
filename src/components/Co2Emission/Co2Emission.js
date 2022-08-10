@@ -10,11 +10,14 @@ function Co2Emission(props) {
 	//   const date = `
 	//      ${current.getMonth() + 1}-${current.getDate()}-${current.getFullYear()}`;
 
-	const [modal, setModal] = useState(true);
 
-	const saveResult = () => {
-		setModal(true);
-	};
+  const [modal, setModal] = useState(false);
+
+  const saveResult = () => {
+    props.createEntry();
+    setModal(true);
+  };
+
 
 	const closeModal = () => {
 		setModal(false);
@@ -43,7 +46,7 @@ function Co2Emission(props) {
 				<button
 					className="saveResult"
 					variant="contained"
-					onClick={props.createEntry}>
+					onClick={saveResult}>
 					Save Result
 				</button>
 				<button
@@ -58,6 +61,7 @@ function Co2Emission(props) {
 			</div>
 		</div>
 	);
+
 }
 
 export default Co2Emission;

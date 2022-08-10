@@ -17,16 +17,17 @@ function App() {
   const [isActive, setIsActive] = useState(true);
   const [classState, setClassState] = useState("inactive");
 
-  function handleClick() {
-    console.log("hello testing");
-    setIsActive(!isActive);
-    if (isActive) {
-      setClassState("active");
-    } else {
-      setClassState("inactive");
-    }
-    return classState;
-  }
+
+	function handleClick() {
+		setIsActive(!isActive);
+		if (isActive) {
+			setClassState('active');
+		} else {
+			setClassState('inactive');
+		}
+		return classState;
+	}
+
 
   const [user, setUser] = useState(null);
   const [entry, setEntry] = useState([]);
@@ -95,7 +96,6 @@ function App() {
   };
 
   // CREATE ROUTE
-
   const createEntry = async () => {
     const token = await user.getIdToken();
     await fetch(URL, {

@@ -28,24 +28,28 @@ function Co2Emission(props) {
   };
 
   return (
-    <div>
+    <div className="Co2Body">
       {modal && <ConfirmationModal closeModal={closeModal} />}
       <div className="circleContainer">
-        <h1> {props.carbonInfo} </h1>
+        <p className="circleText"> {props.carbonInfo} </p>
+        <img src="/assets/gradient.png" className="gradient"></img>
       </div>
 
-      <Button color="primary" variant="contained" onClick={props.createEntry}>
-        Save Result
-      </Button>
-      <Button color="secondary" variant="contained" onClick={navigateToForm}>
-        New Trip
-      </Button>
-
+      {/* <div className="imgContainer">
+				<p> Cool gradient bro</p>
+				<img className="circleContainer2" src="/assets/gradient.png" />
+			</div> */}
+      <div className="buttonsContainer">
+        <Button color="primary" variant="contained" onClick={props.createEntry}>
+          Save Result
+        </Button>
+        <Button color="secondary" variant="contained" onClick={navigateToForm}>
+          New Trip
+        </Button>
+      </div>
       <p>
         <Link href="/about">Learn More</Link>
       </p>
-
-      {props.user ? <button> Log Out</button> : <div></div>}
     </div>
   );
 }

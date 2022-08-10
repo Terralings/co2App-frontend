@@ -37,6 +37,22 @@ function Home(props) {
         <h1>Zero Carbon</h1>
         <form className="co2Form" onSubmit={props.handleCalcSubmit}>
           <div className="field-inline">
+            <label for="date">
+              {" "}
+              <h2>Date</h2>
+            </label>
+            <input
+              type="date"
+              name="date"
+              value="2022-08-10"
+              onChange={(event) =>
+                props.setNewForm({
+                  ...props.newForm,
+                  date: event.target.value,
+                })
+              }
+            />
+
             <h2 className="form-label">Vehicle Type</h2>
             <select
               name={props.newForm.vehTypeInput}

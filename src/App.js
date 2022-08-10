@@ -41,6 +41,7 @@ function App() {
   const [newForm, setNewForm] = useState({
     // pointA: "",
     // pointB: "",
+    date: "",
     vehTypeInput: "",
     distance: "",
   });
@@ -80,6 +81,7 @@ function App() {
   const getEntry = async () => {
     const token = await user.getIdToken();
     // console.log(token);
+    console.log(user.uid);
     const response = await fetch(URL, {
       method: "GET",
       headers: {
@@ -88,6 +90,7 @@ function App() {
     });
     const data = await response.json();
     setEntry(data);
+    console.log("from get route function: " + entry);
   };
 
   // CREATE ROUTE
@@ -103,6 +106,7 @@ function App() {
       body: JSON.stringify({
         // distance: newForm.distance,
         // carbon: carbonInfo,
+        date: newForm.date.toString(),
         distance: newForm.distance.toString(),
         carbon: carbonInfo.toString(),
         googleId: user.uid.toString(),
@@ -116,20 +120,16 @@ function App() {
     return () => {
       unsubscribe();
     };
-  }, [user]);
+  }, []);
   return (
     <Container>
       <div className="App">
-        {user ? (
-          <button onClick={logout}>Logout</button>
-        ) : (
-          <button onClick={login}>Login</button>
-        )}
         <header>
           <button className="hamburger-icon" onClick={handleClick}>
             <span className="material-symbols-outlined">menu</span>
           </button>
         </header>
+
         <Navigation classState={classState} handleClick={handleClick} />
         <Routes>
           <Route
@@ -159,8 +159,23 @@ function App() {
               />
             }
           />
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route
+            path="/dashboard"
+            element={
+              <Dashboard
+                user={user}
+                entry={entry}
+                getEntry={getEntry}
+                setEntry={setEntry}
+              />
+            }
+          />
         </Routes>
+        {user ? (
+          <button onClick={logout}>Logout</button>
+        ) : (
+          <button onClick={login}>Login</button>
+        )}
       </div>
     </Container>
   );

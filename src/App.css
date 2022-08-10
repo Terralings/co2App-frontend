@@ -26,3 +26,28 @@
   width: 70vw;
   margin-left: 10%; 
 }
+
+
+.logIn {
+  box-sizing: border-box;
+
+/* Auto layout */
+
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 8px 35px;
+gap: 8px;
+
+position: absolute;
+width: 117px;
+height: 35px;
+left: 126.18px;
+top: 549.22px;
+
+background: #000000;
+border: 1px solid #000000;
+border-radius: 14px;
+
+color: white;
+}

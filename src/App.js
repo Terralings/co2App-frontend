@@ -55,7 +55,7 @@ function App() {
 			method: "post",
 			url: "https://app.trycarbonapi.com/api/carTravel",
 			headers: {
-				Authorization: `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiOTg5ZmZlNTk1ODQwNmVjZjIwY2E4ZjEwMmFlZmM5MzFjZjE2Y2NmNGJjNTY2OTUzNzljYzU0OGEwMzQ4MjNkYzJkZjUyYzc3YzdhZWNkYzEiLCJpYXQiOjE2NjAxNDY2MDQsIm5iZiI6MTY2MDE0NjYwNCwiZXhwIjoxNjkxNjgyNjA0LCJzdWIiOiIxMTc0Iiwic2NvcGVzIjpbXX0.oBd1kFxMKEDs9ifVrvnd61zNZdDdchSzyvdTgDVDFjAYvcjHgUp6sNcCHLJnHIg9cknRP8Za1HIlElQjTIwc3Q`,
+				Authorization: `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiOWM2YzkzMmMzODJkYjk0MTliNmEyODNmNDljMmZjYzk3N2FmNjY2NGVlN2NkZTVkYWIwZDJiYjQwZGRiM2ZlOTU4MzQ3NWMzZjZmYzU1YTAiLCJpYXQiOjE2NjAxNTkzMTAsIm5iZiI6MTY2MDE1OTMxMCwiZXhwIjoxNjkxNjk1MzEwLCJzdWIiOiIxMjA0Iiwic2NvcGVzIjpbXX0.eI4hX9NIjLj4KM-tgYY_gbyRZLx1gAv7qOObQAwGShcQ9lHPlSZo7C6HJ6KCZtH3CjLkvlbc7kM5g3KDphkUvQ`,
 				"Content-Type": "application/json",
 			},
 			data: {
@@ -129,11 +129,6 @@ function App() {
 			style={{ backgroundImage: "url(/Assets/image.png" }}
 		>
 			<div className="App">
-				{user ? (
-					<button onClick={logout}>Logout</button>
-				) : (
-					<button onClick={login}>Login</button>
-				)}
 				<header>
 					<button className="hamburger-icon" onClick={handleClick}>
 						<span className="material-symbols-outlined">menu</span>
@@ -189,9 +184,9 @@ function App() {
 					/>
 				</Routes>
 				{user ? (
-					<button onClick={logout}>Logout</button>
+					<button className="logIn" onClick={logout}>Logout</button>
 				) : (
-					<button onClick={login}>Login</button>
+					<button className="logIn" onClick={login}>Login</button>
 				)}
 			</div>
 		</Container>

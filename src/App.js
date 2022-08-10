@@ -1,12 +1,14 @@
-import { useState, useEffect } from "react";
-import "./App.css";
-import Navigation from "./components/Navigation/Navigation";
-import { Routes, Route, useNavigate, Navigate } from "react-router-dom";
-import Home from "./components/Home/Home";
-import About from "./components/About/About";
-import Co2Emission from "./components/Co2Emission/Co2Emission";
-import Dashboard from "./components/Dashboard/Dashboard";
-import axios from "axios";
+
+import { useState, useEffect } from 'react';
+import './App.css';
+import Navigation from './components/Navigation/Navigation';
+import { Routes, Route, useNavigate, Navigate, Link } from 'react-router-dom';
+import Home from './components/Home/Home';
+import About from './components/About/About';
+import Co2Emission from './components/Co2Emission/Co2Emission';
+import Dashboard from './components/Dashboard/Dashboard';
+import axios from 'axios';
+
 //FIREBASE STUFF;  MOVE IT TO RESPECTIVE LOCATION AFTERWARDS
 import { login, logout } from "../src/services/firebase";
 import { auth } from "./services/firebase";
@@ -122,21 +124,24 @@ function App() {
     };
   }, []);
   return (
-    <Container>
-      <div className="App">
-        <header>
-          <button className="hamburger-icon" onClick={handleClick}>
-            <span className="material-symbols-outlined">menu</span>
-          </button>
-        </header>
-
-        <Navigation
-          classState={classState}
-          handleClick={handleClick}
-          user={user}
-        />
-
-        <h1> LOGO GOES HERE</h1>
+    	<Container
+			className="AppContainer"
+			style={{ backgroundImage: 'url(/Assets/image.png' }}>
+			<div className="App">
+				{user ? (
+					<button onClick={logout}>Logout</button>
+				) : (
+					<button onClick={login}>Login</button>
+				)}
+				<header>
+					<button className="hamburger-icon" onClick={handleClick}>
+						<span className="material-symbols-outlined">menu</span>
+					</button>
+				</header>
+				<Navigation classState={classState} handleClick={handleClick} />
+				<Link to="/">
+					<img className="homeLogo" src="/Assets/Logo_mint.png" />
+				</Link>
         <Routes>
           <Route
             path="/"

@@ -15,6 +15,7 @@ import {
 import { borders } from "@mui/system";
 
 function Dashboard(props) {
+
   useEffect(() => {
     // console.log(props.entry);
     props.getEntry();
@@ -39,11 +40,13 @@ function Dashboard(props) {
       >
         <Table aria-label="simple table">
           {/* <TableHead>
+
 						<TableRow>
 							<TableCell>Co2 Emissions:</TableCell>
 							<TableCell>Date:</TableCell>
 						</TableRow>
 					</TableHead> */}
+
 
           <TableBody
             sx={{
@@ -61,6 +64,7 @@ function Dashboard(props) {
       </TableContainer>
     </div>
   );
+
 }
 
 export default Dashboard;

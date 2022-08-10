@@ -15,6 +15,13 @@ function Home(props) {
   //     });
   //   };
 
+  // const handleDateChange = (event) => {
+  //   props.setNewForm({
+  //     ...props.newForm,
+  //     [date]: event.target.value,
+  //   });
+  // };
+
   const handleDistChange = (event) => {
     props.setDistInput(event.target.value);
   };
@@ -44,7 +51,7 @@ function Home(props) {
             <input
               type="date"
               name="date"
-              value="2022-08-10"
+              value={props.newForm.date}
               onChange={(event) =>
                 props.setNewForm({
                   ...props.newForm,

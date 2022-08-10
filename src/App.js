@@ -1,14 +1,13 @@
-
-import { useState, useEffect } from "react";
-import "./App.css";
-import Navigation from "./components/Navigation/Navigation";
-import { Routes, Route, useNavigate, Navigate, Link } from "react-router-dom";
-import Home from "./components/Home/Home";
-import About from "./components/About/About";
-import Co2Emission from "./components/Co2Emission/Co2Emission";
-import Dashboard from "./components/Dashboard/Dashboard";
-import axios from "axios";
-import Account from "./components/Account/Account";
+import { useState, useEffect } from 'react';
+import './App.css';
+import Navigation from './components/Navigation/Navigation';
+import { Routes, Route, useNavigate, Navigate, Link } from 'react-router-dom';
+import Home from './components/Home/Home';
+import About from './components/About/About';
+import Co2Emission from './components/Co2Emission/Co2Emission';
+import Dashboard from './components/Dashboard/Dashboard';
+import axios from 'axios';
+import Account from './components/Account/Account';
 
 //FIREBASE STUFF;  MOVE IT TO RESPECTIVE LOCATION AFTERWARDS
 import { login, logout } from '../src/services/firebase';
@@ -19,7 +18,6 @@ function App() {
 	const [isActive, setIsActive] = useState(true);
 
 	const [classState, setClassState] = useState('inactive');
-
 
 	function handleClick() {
 		setIsActive(!isActive);
@@ -34,31 +32,30 @@ function App() {
 	const [user, setUser] = useState(null);
 	const [entry, setEntry] = useState([]);
 
-
-	const URL = "https://zero-carbon-backend.herokuapp.com/home/";
+	const URL = 'https://zero-carbon-backend.herokuapp.com/home/';
 
 	//carbon states
 	// const [distInput, setDistInput] = useState("");
 	// const [vehTypeInput, setVehTypeInput] = useState("");
-	const [carbonInfo, setCarbonInfo] = useState("");
+	const [carbonInfo, setCarbonInfo] = useState('');
 
 	// FORM STATES
 	const [newForm, setNewForm] = useState({
 		// pointA: "",
 		// pointB: "",
-		date: "",
-		vehTypeInput: "",
-		distance: "",
+		date: '',
+		vehTypeInput: '',
+		distance: '',
 	});
 
 	//API FUNCTION
 	const getAPI = async () => {
 		axios({
-			method: "post",
-			url: "https://app.trycarbonapi.com/api/carTravel",
+			method: 'post',
+			url: 'https://app.trycarbonapi.com/api/carTravel',
 			headers: {
-				Authorization: `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiOWM2YzkzMmMzODJkYjk0MTliNmEyODNmNDljMmZjYzk3N2FmNjY2NGVlN2NkZTVkYWIwZDJiYjQwZGRiM2ZlOTU4MzQ3NWMzZjZmYzU1YTAiLCJpYXQiOjE2NjAxNTkzMTAsIm5iZiI6MTY2MDE1OTMxMCwiZXhwIjoxNjkxNjk1MzEwLCJzdWIiOiIxMjA0Iiwic2NvcGVzIjpbXX0.eI4hX9NIjLj4KM-tgYY_gbyRZLx1gAv7qOObQAwGShcQ9lHPlSZo7C6HJ6KCZtH3CjLkvlbc7kM5g3KDphkUvQ`,
-				"Content-Type": "application/json",
+				Authorization: `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiZjM5ZGMwNjMxN2ZiN2MxYTFkOGFkOTdmY2NkZjE5YmE4NTQ2NDE3MTZjZWI2ZTFlMDNmMmZmYTQ2NjA1ZDdmNjRkMTEzNGJjMzFmOWJjOGQiLCJpYXQiOjE2NjAxNDY5NzAsIm5iZiI6MTY2MDE0Njk3MCwiZXhwIjoxNjkxNjgyOTY5LCJzdWIiOiIxMTg0Iiwic2NvcGVzIjpbXX0.gQnSj8TavdyFVOmCQ324iHG9Llgloz5sDTcpOrYzoZiXs8oMWuMIXkE8gzQ5M8sIcKdxLcEcT0csF2Gjab4U9w`,
+				'Content-Type': 'application/json',
 			},
 			data: {
 				distance: newForm.distance,
@@ -73,14 +70,14 @@ function App() {
 				console.log(carbonInfo);
 			})
 			.catch((error) => {
-				console.error("Error:", error);
+				console.error('Error:', error);
 			});
 	};
 	const navigate = useNavigate();
 	const handleCalcSubmit = (e) => {
 		e.preventDefault();
 		getAPI();
-		navigate("/co2Emissions");
+		navigate('/co2Emissions');
 	};
 	// GET ROUTE
 	const getEntry = async () => {
@@ -88,24 +85,24 @@ function App() {
 		// console.log(token);
 		console.log(user.uid);
 		const response = await fetch(URL, {
-			method: "GET",
+			method: 'GET',
 			headers: {
-				Authorization: " Bearer  " + token,
+				Authorization: ' Bearer  ' + token,
 			},
 		});
 		const data = await response.json();
 		setEntry(data);
-		console.log("from get route function: " + entry);
+		console.log('from get route function: ' + entry);
 	};
 
 	// CREATE ROUTE
 	const createEntry = async () => {
 		const token = await user.getIdToken();
 		await fetch(URL, {
-			method: "POST",
+			method: 'POST',
 			headers: {
-				"Content-type": "Application/json",
-				Authorization: " Bearer  " + token,
+				'Content-type': 'Application/json',
+				Authorization: ' Bearer  ' + token,
 			},
 			body: JSON.stringify({
 				// distance: newForm.distance,
@@ -128,10 +125,8 @@ function App() {
 	return (
 		<Container
 			className="AppContainer"
-			style={{ backgroundImage: "url(/Assets/image.png" }}
-		>
+			style={{ backgroundImage: 'url(/Assets/image.png' }}>
 			<div className="App">
-
 				<header>
 					<button className="hamburger-icon" onClick={handleClick}>
 						<span className="material-symbols-outlined">menu</span>
@@ -164,7 +159,7 @@ function App() {
 					/>
 					<Route path="/about" element={<About />} />
 
-           <Route path="/account" element={<Account user={user} />} />
+					<Route path="/account" element={<Account user={user} />} />
 
 					<Route
 						path="/co2emissions"
@@ -189,10 +184,13 @@ function App() {
 					/>
 				</Routes>
 				{user ? (
-
-					<button className="logIn" onClick={logout}>Logout</button>
+					<button className="logIn" onClick={logout}>
+						Logout
+					</button>
 				) : (
-					<button className="logIn" onClick={login}>Login</button>
+					<button className="logIn" onClick={login}>
+						Login
+					</button>
 				)}
 			</div>
 		</Container>

@@ -77,7 +77,7 @@ function App() {
 
   // CREATE ROUTE
 
-  const createEntry = async (entry) => {
+  const createEntry = async () => {
     const token = await user.getIdToken();
     await fetch(URL, {
       method: "POST",
@@ -85,12 +85,18 @@ function App() {
         "Content-type": "Application/json",
         Authorization: " Bearer  " + token,
       },
-      body: JSON.stringify(entry),
+      body: JSON.stringify({
+        // distance: newForm.distance,
+        // carbon: carbonInfo,
+        distance: 30,
+        carbon: 6.7,
+      }),
+      // body: JSON.stringify(entry),
     });
   };
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => setUser(user));
-    getEntry();
+    // getEntry();
     return () => {
       unsubscribe();
     };
@@ -98,9 +104,9 @@ function App() {
   return (
     <div className="App">
       {user ? (
-        <div onClick={logout}>Logout</div>
+        <button onClick={logout}>Logout</button>
       ) : (
-        <div onClick={login}>Login</div>
+        <button onClick={login}>Login</button>
       )}
       <Navigation />
       <Routes>
@@ -123,7 +129,13 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route
           path="/co2emissions"
-          element={<Co2Emission carbonInfo={carbonInfo} user={user} />}
+          element={
+            <Co2Emission
+              carbonInfo={carbonInfo}
+              user={user}
+              createEntry={createEntry}
+            />
+          }
         />
         <Route path="/dashboard" element={<Dashboard />} />
       </Routes>

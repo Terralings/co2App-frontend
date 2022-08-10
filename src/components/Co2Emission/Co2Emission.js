@@ -11,7 +11,8 @@ function Co2Emission(props) {
 
   const navigate = useNavigate();
 
-  const navigateToForm = () => {
+  const navigateToForm = (e) => {
+    e.preventDefault();
     navigate("/");
   };
   return (
@@ -20,22 +21,18 @@ function Co2Emission(props) {
         <h1> {props.carbonInfo} </h1>
       </div>
 
-      <Button color="primary" variant="contained">
+      <Button color="primary" variant="contained" onClick={props.createEntry}>
         Save Result
       </Button>
-      <Button color="secondary" variant="contained">
+      <Button color="secondary" variant="contained" onClick={navigateToForm}>
         New Trip
       </Button>
 
       <p>
-        <Link href="#">Learn More</Link>
+        <Link href="/about">Learn More</Link>
       </p>
 
-      {props.user ? (
-        <button onClick={navigateToForm}> Log Out</button>
-      ) : (
-        <div></div>
-      )}
+      {props.user ? <button> Log Out</button> : <div></div>}
     </div>
   );
 }

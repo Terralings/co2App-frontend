@@ -30,7 +30,7 @@ function App() {
   const [user, setUser] = useState(null);
   const [entry, setEntry] = useState([]);
 
-  const URL = "http://localhost:4000/home/";
+  const URL = "https://zero-carbon-backend.herokuapp.com/home/";
 
   //carbon states
   // const [distInput, setDistInput] = useState("");
@@ -52,7 +52,7 @@ function App() {
       method: "post",
       url: "https://app.trycarbonapi.com/api/carTravel",
       headers: {
-        Authorization: `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiMGU5NjM2OWVlYzEzODNmZTVlNDk1NGNjNWQxMTYzOTY3NjgyNDdhMzY3NDQ1NTEwNDBmM2QxOWM1YzkyYjBmM2FjYjI5NjAwODE3OThjYjAiLCJpYXQiOjE2NjAxMDc4MzgsIm5iZiI6MTY2MDEwNzgzOCwiZXhwIjoxNjkxNjQzODM4LCJzdWIiOiIxMTY0Iiwic2NvcGVzIjpbXX0.a2fWC1Yxzj4LDWt7-GYDeegZqavR5Egk4averCJ0q_y6sbHIQrQujOZQ3SOw24ytwlo1cJ2OOgHFUuUxuLJAvA`,
+        Authorization: `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiOTg5ZmZlNTk1ODQwNmVjZjIwY2E4ZjEwMmFlZmM5MzFjZjE2Y2NmNGJjNTY2OTUzNzljYzU0OGEwMzQ4MjNkYzJkZjUyYzc3YzdhZWNkYzEiLCJpYXQiOjE2NjAxNDY2MDQsIm5iZiI6MTY2MDE0NjYwNCwiZXhwIjoxNjkxNjgyNjA0LCJzdWIiOiIxMTc0Iiwic2NvcGVzIjpbXX0.oBd1kFxMKEDs9ifVrvnd61zNZdDdchSzyvdTgDVDFjAYvcjHgUp6sNcCHLJnHIg9cknRP8Za1HIlElQjTIwc3Q`,
         "Content-Type": "application/json",
       },
       data: {
@@ -130,7 +130,13 @@ function App() {
           </button>
         </header>
 
-        <Navigation classState={classState} handleClick={handleClick} />
+        <Navigation
+          classState={classState}
+          handleClick={handleClick}
+          user={user}
+        />
+
+        <h1> LOGO GOES HERE</h1>
         <Routes>
           <Route
             path="/"

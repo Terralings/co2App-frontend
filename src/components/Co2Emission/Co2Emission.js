@@ -31,8 +31,6 @@ function Co2Emission(props) {
       <p>
         <Link href="/about">Learn More</Link>
       </p>
-
-      {props.user ? <button> Log Out</button> : <div></div>}
     </div>
   );
 }

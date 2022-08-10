@@ -124,7 +124,7 @@ function Home(props) {
                                 placeholder='(ex. 321 South Main Rd...)'
                             />
                         </div> */}
-          <input type="submit" />
+          <input type="submit" value="See Your Carbon Footprint" />
         </form>
       </section>
     </div>

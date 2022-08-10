@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Navigation.css";
 
-function Navigation({ classState, handleClick }) {
+function Navigation({ classState, handleClick, user }) {
   return (
     <div className={`${classState}` + " nav"}>
       <nav className="nav-container">
@@ -36,14 +36,22 @@ function Navigation({ classState, handleClick }) {
             </Link>
           </ul>
         </div>
-        <ul className="bottom-nav">
-          <Link to="/dashboard" className="nav-item" onClick={handleClick}>
-            Account
-          </Link>
-          <Link to="/comingsoon" className="nav-item" onClick={handleClick}>
-            Contact Us
-          </Link>
-        </ul>
+        {user ? (
+          <ul className="bottom-nav">
+            <Link to="/dashboard" className="nav-item" onClick={handleClick}>
+              Account
+            </Link>
+            <Link to="/comingsoon" className="nav-item" onClick={handleClick}>
+              Contact Us
+            </Link>
+          </ul>
+        ) : (
+          <ul className="bottom-nav">
+            <Link to="/comingsoon" className="nav-item" onClick={handleClick}>
+              Contact Us
+            </Link>
+          </ul>
+        )}
       </nav>
     </div>
   );

@@ -13,26 +13,27 @@ function Navigation({ classState, handleClick }) {
                     </button>
                     <div className='logo-container'>
                         <Link to='/'>
-                            <img src='/Assets/BLACK_LOGO.png' alt="ZeroCarbon logo" className='darkLogo'/>
+                            <img src='/Assets/BLACK_LOGO.png' alt="ZeroCarbon logo" className='darkLogo' 
+                            onClick={handleClick}/>
                         </Link>
                     </div>
                     <ul className='ul-top'>
-                        <Link to='/about' className='nav-item'>
+                        <Link to='/about' className='nav-item' onClick={handleClick}>
                             ABOUT
                         </Link>
-                        <Link to='/comingsoon' className='nav-item'>
+                        <Link to='/comingsoon' className='nav-item' onClick={handleClick}>
                             RESOURCES
                         </Link>
-                        <Link to='/comingsoon' className='nav-item'>
+                        <Link to='/comingsoon' className='nav-item' onClick={handleClick}>
                             GET INVOLVED
                         </Link>
                     </ul>
                 </div>
                 <ul className='bottom-nav'>
-                    <Link to='/account' className='nav-item'>
+                    <Link to='/account' className='nav-item' onClick={handleClick}>
                         Account
                     </Link>
-                    <Link to='/comingsoon' className='nav-item'>
+                    <Link to='/comingsoon' className='nav-item' onClick={handleClick}>
                         Contact Us
                     </Link>
                 </ul>

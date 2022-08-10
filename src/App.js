@@ -117,7 +117,9 @@ function App() {
 		};
 	}, [user]);
 	return (
-		<Container style={{ backgroundImage: 'url(/Assets/image.png' }}>
+		<Container
+			className="AppContainer"
+			style={{ backgroundImage: 'url(/Assets/image.png' }}>
 			<div className="App">
 				{user ? (
 					<button onClick={logout}>Logout</button>

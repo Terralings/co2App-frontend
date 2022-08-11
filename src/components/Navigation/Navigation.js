@@ -42,7 +42,7 @@ function Navigation({ classState, handleClick, user }) {
             <Link to="/account" className="nav-item" onClick={handleClick}>
               Account
             </Link>
-            <Link to="/comingsoon" className="nav-item" onClick={handleClick}>
+            <Link to="/contactus" className="nav-item" onClick={handleClick}>
               Contact Us
             </Link>
             <h1 className="nav-item" onClick={logout}>

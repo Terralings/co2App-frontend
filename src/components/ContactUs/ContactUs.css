@@ -1,0 +1,18 @@
+.teamContacts {
+    font-size: 25px;
+    color:black;
+}
+
+.teamNames li{
+    list-style:none;
+}
+
+.teamNames li a  {
+    color:white;
+    text-shadow: 2px 1px black;
+}
+
+.teamNames li a:hover {
+    cursor:pointer;
+    color:black;
+}

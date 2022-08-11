@@ -43,6 +43,7 @@ function Home(props) {
               <h2 className="date-label">Date</h2>
             </label>
             <input
+              required
               className="dateMenu"
               type="date"
               name="date"
@@ -65,11 +66,14 @@ function Home(props) {
                   vehTypeInput: event.target.value,
                 })
               }
+              required
             >
+              <option value="none" selected disabled hidden>
+                Select an Option
+              </option>
               <option
                 // onSelect={(e) => setNewForm(e.target.value)}
                 value="SmallDieselCar"
-                selected="selected"
               >
                 Compact Car
               </option>
@@ -102,8 +106,10 @@ function Home(props) {
           <div className="field-inline">
             <h2 className="distance-label">Trip Distance(mi)</h2>
             <input
+              required
               className="userDistance"
               value={props.newForm.distance}
+              placeholder="example: 5"
               onChange={handleVehChange}
               name="distance"
               type="text"

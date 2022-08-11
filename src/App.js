@@ -10,6 +10,7 @@ import axios from "axios";
 import Account from "./components/Account/Account";
 import Resources from "./components/Resources/Resources";
 import GetInvolved from "./components/GetInvolved/GetInvolved";
+import ContactUs from "./components/ContactUs/ContactUs";
 //FIREBASE STUFF;  MOVE IT TO RESPECTIVE LOCATION AFTERWARDS
 import { login, logout } from "../src/services/firebase";
 import { auth } from "./services/firebase";
@@ -172,6 +173,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/getinvolved" element={<GetInvolved />} />
           <Route path="/resources" element={<Resources />} />
+          <Route path="/contactus" element={<ContactUs />} />
 
           <Route path="/account" element={<Account user={user} />} />
 

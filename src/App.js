@@ -66,7 +66,8 @@ function App() {
         console.log(res);
         const apiInfo = res.data;
         const { carbon } = apiInfo;
-        setCarbonInfo(carbon);
+        const adjustedCarbon = carbon.split(" ")[0];
+        setCarbonInfo(adjustedCarbon);
         console.log(carbonInfo);
       })
       .catch((error) => {

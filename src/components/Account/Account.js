@@ -15,10 +15,15 @@ const Account = ({ user }) => {
   };
   return (
     <div>
-      <h1 className="accountHeading"> Hi, {user.displayName}!</h1>
-      <h2 className="accountSubheading"> WHERE ARE WE GOING TODAY?</h2>
+      <h1 className="accountHeading">
+        {" "}
+        Hi, {user.displayName}! <br />
+        <br /> WHAT WOULD YOU LIKE TO DO TODAY?
+      </h1>
+      {/* <h2 className="accountSubheading"> WHAT WOULD YOU LIKE TO DO TODAY?</h2> */}
 
       <div>
+        <br />
         <Button
           color="primary"
           variant="contained"

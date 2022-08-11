@@ -29,10 +29,10 @@ function Navigation({ classState, handleClick, user }) {
             <Link to="/about" className="nav-item" onClick={handleClick}>
               ABOUT
             </Link>
-            <Link to="/comingsoon" className="nav-item" onClick={handleClick}>
+            <Link to="/resources" className="nav-item" onClick={handleClick}>
               RESOURCES
             </Link>
-            <Link to="/comingsoon" className="nav-item" onClick={handleClick}>
+            <Link to="/getinvolved" className="nav-item" onClick={handleClick}>
               GET INVOLVED
             </Link>
           </ul>

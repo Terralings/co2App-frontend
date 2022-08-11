@@ -6,14 +6,14 @@ function About(props) {
   return (
     <div className="aboutBody">
       <div>
-        <h2>Our Mission </h2>
+        {/* <h2>Our Mission </h2> */}
         <p className="about">
           The creation of Zero Carbon is to built to track carbon emissions from
           transportation so users can track their foot print on the environment.
           We designed this product to create awareness for the average person.
         </p>
       </div>
-      <h2>Learn More </h2>
+      {/* <h2>Learn More </h2> */}
       <p className="about">What is a carbon footprint? </p>
       <li>Greenhouse gasses (carbon dioxide, methane, etc.)</li>
       <li>Produced by the human populations actions </li>

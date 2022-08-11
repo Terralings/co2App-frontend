@@ -8,7 +8,8 @@ import Co2Emission from "./components/Co2Emission/Co2Emission";
 import Dashboard from "./components/Dashboard/Dashboard";
 import axios from "axios";
 import Account from "./components/Account/Account";
-
+import Resources from "./components/Resources/Resources";
+import GetInvolved from "./components/GetInvolved/GetInvolved";
 //FIREBASE STUFF;  MOVE IT TO RESPECTIVE LOCATION AFTERWARDS
 import { login, logout } from "../src/services/firebase";
 import { auth } from "./services/firebase";
@@ -47,6 +48,9 @@ function App() {
     vehTypeInput: "",
     distance: "",
   });
+  const convert = (number) => {
+    return number * 1.60934;
+  };
 
   //API FUNCTION
   const getAPI = async () => {
@@ -58,7 +62,7 @@ function App() {
         "Content-Type": "application/json",
       },
       data: {
-        distance: newForm.distance,
+        distance: convert(newForm.distance),
         vehicle: newForm.vehTypeInput,
       },
     })
@@ -166,6 +170,8 @@ function App() {
             }
           />
           <Route path="/about" element={<About />} />
+          <Route path="/getinvolved" element={<GetInvolved />} />
+          <Route path="/resources" element={<Resources />} />
 
           <Route path="/account" element={<Account user={user} />} />
 

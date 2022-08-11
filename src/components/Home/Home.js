@@ -100,7 +100,7 @@ function Home(props) {
             </select>
           </div>
           <div className="field-inline">
-            <h2 className="distance-label">Trip Distance(km)</h2>
+            <h2 className="distance-label">Trip Distance(mi)</h2>
             <input
               className="userDistance"
               value={props.newForm.distance}

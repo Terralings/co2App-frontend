@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Navigation.css";
+import { login, logout } from "../../services/firebase";
 
 function Navigation({ classState, handleClick, user }) {
   return (
@@ -44,12 +45,18 @@ function Navigation({ classState, handleClick, user }) {
             <Link to="/comingsoon" className="nav-item" onClick={handleClick}>
               Contact Us
             </Link>
+            <h1 className="nav-item" onClick={logout}>
+              Logout
+            </h1>
           </ul>
         ) : (
           <ul className="bottom-nav">
             <Link to="/comingsoon" className="nav-item" onClick={handleClick}>
               Contact Us
             </Link>
+            <h1 className="nav-item" onClick={login}>
+              Log In
+            </h1>
           </ul>
         )}
       </nav>

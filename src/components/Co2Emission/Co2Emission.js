@@ -4,6 +4,7 @@ import { Button } from "@mui/material";
 import Link from "@mui/material/Link";
 import { useNavigate, Navigate } from "react-router-dom";
 import ConfirmationModal from "../../components/ConfirmationModal/ConfirmationModal.js";
+import { login, logout } from "../../services/firebase";
 
 function Co2Emission(props) {
   //   const current = new Date();
@@ -45,9 +46,20 @@ function Co2Emission(props) {
 				<img className="circleContainer2" src="/assets/gradient.png" />
 			</div> */}
       <div className="buttonsContainer">
-        <button className="saveResult" variant="contained" onClick={saveResult}>
-          Save Result
-        </button>
+        {props.user ? (
+          <button
+            className="saveResult"
+            variant="contained"
+            onClick={saveResult}
+          >
+            Save Result
+          </button>
+        ) : (
+          <button className="saveResult" variant="contained" onClick={login}>
+            Save Result
+          </button>
+        )}
+
         <button
           className="pasttripBtn newtripBtn
 "

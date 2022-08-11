@@ -21,15 +21,9 @@ function ConfirmationModal({ closeModal, user }) {
           <Link to="/">
             <button className="newtripBtn">New Trip</button>
           </Link>
-          {user ? (
-            <Link to="/dashboard">
-              <button className="pasttripBtn">View Past Trips</button>
-            </Link>
-          ) : (
-            <button className="pasttripBtn" onClick={login}>
-              View Past Trips
-            </button>
-          )}
+          <Link to="/dashboard">
+            <button className="pasttripBtn">View Past Trips</button>
+          </Link>
           <button className="cancelBtn" onClick={closeModal}>
             Cancel
           </button>

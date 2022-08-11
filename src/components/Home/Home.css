@@ -1,17 +1,17 @@
-h2 {
+/* h2 {
     position: absolute;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
     font-size: 12px;
     line-height: 15px;
-    /* identical to box height */
+ 
 
     text-align: center;
 
     color: white;
 
-}
+} */
 
 .dateMenu {
     position: absolute;
@@ -33,6 +33,15 @@ h2 {
     height: 15px;
     left: 26.5px;
     top: 170px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+ 
+
+    text-align: center;
+
+    color: white;
 
     
 }
@@ -57,6 +66,15 @@ h2 {
     height: 15px;
     left: 26.5px;
     top: 266px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+ 
+
+    text-align: center;
+
+    color: white;
 
 }
 
@@ -103,5 +121,14 @@ h2 {
     height: 15px;
     left: 26.5px;
     top: 350px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+ 
+
+    text-align: center;
+
+    color: white;
 
 }

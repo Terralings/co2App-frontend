@@ -36,8 +36,16 @@
 
 .circleText{
     color: #01E2BA; 
-    position: absolute;
+    font-weight:700;
+    font-size: 40px;
+    /* position: absolute; */
     z-index: 1; 
+    text-shadow: 2px 1px rgba(0, 0, 0, 0.5);
+}
+.kgText {
+    margin: 0;
+    font-size:30px;
+    padding:0;
 }
 
 .section {
@@ -92,6 +100,6 @@
 .learnMore {
     margin: 2%;
     color: #01E2BA;
-    background-color:gray; 
+    text-shadow: 2px 1px rgba(0, 0, 0, 0.5);
 
 }

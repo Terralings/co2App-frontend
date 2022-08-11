@@ -1,39 +1,37 @@
-import { useState } from 'react';
-import { Button } from '@mui/material';
-import "./Home.css"
-
+import { useState } from "react";
+import { Button } from "@mui/material";
+import "./Home.css";
 
 function Home(props) {
-	//   const [newForm, setNewForm] = useState({
-	//     // pointA: "",
-	//     // pointB: "",
-	//     vehTypeInput: "",
-	//     distance: "",
-	//   });
+  //   const [newForm, setNewForm] = useState({
+  //     // pointA: "",
+  //     // pointB: "",
+  //     vehTypeInput: "",
+  //     distance: "",
+  //   });
 
-	//   const handleChange = (event) => {
-	//     setNewForm({
-	//       ...newForm,
-	//       [event.target.name]: event.target.value,
-	//     });
-	//   };
+  //   const handleChange = (event) => {
+  //     setNewForm({
+  //       ...newForm,
+  //       [event.target.name]: event.target.value,
+  //     });
+  //   };
 
-	const handleDistChange = (event) => {
-		props.setDistInput(event.target.value);
-	};
-	const handleVehChange = (event) => {
-		// props.setVehTypeInput(event.target.value);
-		props.setNewForm({
-			...props.newForm,
-			[event.target.name]: event.target.value,
-		});
-	};
+  const handleDistChange = (event) => {
+    props.setDistInput(event.target.value);
+  };
+  const handleVehChange = (event) => {
+    // props.setVehTypeInput(event.target.value);
+    props.setNewForm({
+      ...props.newForm,
+      [event.target.name]: event.target.value,
+    });
+  };
 
-	//   const handleSubmit = (event) => {
-	//     event.preventDefault();
-	//     props.createEntry(newForm); //not sure about this one, need confirmation
-	//   };
-
+  //   const handleSubmit = (event) => {
+  //     event.preventDefault();
+  //     props.createEntry(newForm); //not sure about this one, need confirmation
+  //   };
 
   return (
     <div>
@@ -45,6 +43,7 @@ function Home(props) {
               <h2 className="date-label">Date</h2>
             </label>
             <input
+              required
               className="dateMenu"
               type="date"
               name="date"
@@ -67,11 +66,14 @@ function Home(props) {
                   vehTypeInput: event.target.value,
                 })
               }
+              required
             >
+              <option value="none" selected disabled hidden>
+                Select an Option
+              </option>
               <option
                 // onSelect={(e) => setNewForm(e.target.value)}
                 value="SmallDieselCar"
-                selected="selected"
               >
                 Compact Car
               </option>
@@ -102,10 +104,12 @@ function Home(props) {
             </select>
           </div>
           <div className="field-inline">
-            <h2 className="distance-label">Trip Distance(km)</h2>
+            <h2 className="distance-label">Trip Distance(mi)</h2>
             <input
+              required
               className="userDistance"
               value={props.newForm.distance}
+              placeholder="example: 5"
               onChange={handleVehChange}
               name="distance"
               type="text"
@@ -133,7 +137,11 @@ function Home(props) {
                             />
                         </div> */}
 
-          <input className="seeCarbonbutton" type="submit" value="See Your Carbon Footprint" />
+          <input
+            className="seeCarbonbutton"
+            type="submit"
+            value="See Your Carbon Footprint"
+          />
         </form>
       </section>
     </div>

@@ -16,13 +16,15 @@
 
 .App {
   /* background-image: "url(/Assets/Image.png)"; */
+  /* background-attachment: scroll; */
     background-size: cover;
     max-width: auto;
     background-position: center;
     background-repeat: no-repeat;
     height: 100vh;
-    margin:auto;
+    /* margin:auto; */
     position: relative; 
+    
 }
 
 .homeLogo {
@@ -44,7 +46,7 @@
   box-sizing: border-box;
 
 /* Auto layout */
-
+/* 
 display: flex;
 flex-direction: row;
 align-items: flex-start;
@@ -61,5 +63,5 @@ background: #000000;
 border: 1px solid #000000;
 border-radius: 14px;
 
-color: white;
+color: white; */
 }

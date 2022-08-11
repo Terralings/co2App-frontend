@@ -54,7 +54,9 @@ function Dashboard(props) {
           >
             {props.entry.map((entry, index) => (
               <TableRow key={index}>
-                <TableCell style={{ color: "white" }}>{entry.carbon}</TableCell>
+                <TableCell style={{ color: "white" }}>
+                  {entry.carbon} kg of Co2
+                </TableCell>
                 <TableCell style={{ color: "white" }}>{entry.date}</TableCell>
               </TableRow>
             ))}

@@ -32,7 +32,11 @@ function Co2Emission(props) {
     <div className="Co2Body">
       {modal && <ConfirmationModal closeModal={closeModal} user={props.user} />}
       <div className="circleContainer">
-        <p className="circleText"> {props.carbonInfo} </p>
+        <p className="circleText">
+          {props.carbonInfo}
+          <br />
+          <p className="kgText"> kg of Co2</p>
+        </p>
         <img src="/assets/gradient.png" className="gradient"></img>
       </div>
 

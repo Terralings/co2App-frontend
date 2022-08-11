@@ -54,7 +54,7 @@ function App() {
       method: "post",
       url: "https://app.trycarbonapi.com/api/carTravel",
       headers: {
-        Authorization: `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiZjM5ZGMwNjMxN2ZiN2MxYTFkOGFkOTdmY2NkZjE5YmE4NTQ2NDE3MTZjZWI2ZTFlMDNmMmZmYTQ2NjA1ZDdmNjRkMTEzNGJjMzFmOWJjOGQiLCJpYXQiOjE2NjAxNDY5NzAsIm5iZiI6MTY2MDE0Njk3MCwiZXhwIjoxNjkxNjgyOTY5LCJzdWIiOiIxMTg0Iiwic2NvcGVzIjpbXX0.gQnSj8TavdyFVOmCQ324iHG9Llgloz5sDTcpOrYzoZiXs8oMWuMIXkE8gzQ5M8sIcKdxLcEcT0csF2Gjab4U9w`,
+        Authorization: `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiNDA4MjU1YzRhZjVlNzNlYjhmMWU3OWM5YjA0M2FjZDFjMDllY2QwYzZkNWNjMGIyZTIwMWY0NTQxNDM5NTJjMTFkY2NhNDQ1Nzk2ZjI2OTkiLCJpYXQiOjE2NjAyNDMwODgsIm5iZiI6MTY2MDI0MzA4OCwiZXhwIjoxNjkxNzc5MDg4LCJzdWIiOiIxMjE0Iiwic2NvcGVzIjpbXX0.XJSLUGTZr8KXGoCA3L4EueeMHn6M1UetuyVi_u-wZ84AZ2e9xAHSNpYRgg9B2SzTR1pALAY14FnxgVMCBNA-4g`,
         "Content-Type": "application/json",
       },
       data: {
@@ -67,8 +67,11 @@ function App() {
         const apiInfo = res.data;
         const { carbon } = apiInfo;
         const adjustedCarbon = carbon.split(" ")[0];
-        setCarbonInfo(adjustedCarbon);
-        console.log(carbonInfo);
+        const converted = parseFloat(adjustedCarbon);
+        const adjusted = Math.max(Math.round(converted * 10) / 10, 2.8).toFixed(
+          2
+        );
+        setCarbonInfo(adjusted);
       })
       .catch((error) => {
         console.error("Error:", error);

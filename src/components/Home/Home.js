@@ -48,7 +48,7 @@ function Home(props) {
               className="dateMenu"
               type="date"
               name="date"
-              value="2022-08-10"
+              value={props.newForm.date}
               onChange={(event) =>
                 props.setNewForm({
                   ...props.newForm,

@@ -17,7 +17,9 @@
     background-position: center;
     background-repeat: no-repeat;
 }
-
+.errorMessage{
+    font-size:12px;
+}
 .circleText{
     display: flex;
     flex-direction: column;

@@ -29,16 +29,24 @@ function Co2Emission(props) {
 
   return (
     <div className="Co2Body">
-
       {/* Confirmation Modal */}
       {modal && <ConfirmationModal closeModal={closeModal} user={props.user} />}
 
       <div className="circleContainer">
-        <p className="circleText">
-          {props.carbonInfo}
-          <br />
-          <p className="kgText"> kg of Co2</p>
-        </p>
+        {!props.empty ? (
+          <p className="circleText">
+            {props.carbonInfo}
+            <br />
+            <p className="kgText"> kg of Co2</p>
+          </p>
+        ) : (
+          <div className="circleText">
+            <p class="errorMessage">
+              Sorry, something unexpected happened. Please contact one of the
+              engineers
+            </p>
+          </div>
+        )}
       </div>
 
       <div className="buttonsContainer">
@@ -56,10 +64,7 @@ function Co2Emission(props) {
           </button>
         )}
 
-        <button
-          className="pasttripBtn newtripBtn"
-          onClick={navigateToForm}
-        >
+        <button className="pasttripBtn newtripBtn" onClick={navigateToForm}>
           New Trip
         </button>
 

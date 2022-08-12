@@ -1,5 +1,6 @@
 import { Button } from "@mui/material";
 import { useNavigate, Navigate } from "react-router-dom";
+import "./Account.css";
 import Link from "@mui/material/Link";
 
 const Account = ({ user }) => {
@@ -13,17 +14,20 @@ const Account = ({ user }) => {
     e.preventDefault();
     navigate("/dashboard");
   };
-  return (
-    <div>
-      <h1 className="accountHeading">
-        {" "}
-        Hi, {user.displayName}! <br />
-        <br /> WHAT WOULD YOU LIKE TO DO TODAY?
-      </h1>
-      {/* <h2 className="accountSubheading"> WHAT WOULD YOU LIKE TO DO TODAY?</h2> */}
 
-      <div>
-        <br />
+  return (
+    <div className='account-container'>
+      <div className='accountHeader'>
+        <p className="accountName">
+          {" "}
+          <span>hi </span> {user.displayName},
+        </p>
+        <p className='accountPrompt'>
+          WHERE ARE WE GOING TODAY?
+        </p>
+      </div>
+
+      <div className='accountBtn-container'>
         <Button
           color="primary"
           variant="contained"
@@ -64,10 +68,10 @@ const Account = ({ user }) => {
         >
           View Past Trips
         </Button>
+        <div className='learnMoreBtn'>
+          <Link href="/about">Learn More</Link>
+        </div>
       </div>
-      <p>
-        <Link href="/about">Learn More</Link>
-      </p>
     </div>
   );
 };

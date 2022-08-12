@@ -58,7 +58,7 @@ function App() {
       method: "post",
       url: "https://app.trycarbonapi.com/api/carTravel",
       headers: {
-        Authorization: `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiNDA4MjU1YzRhZjVlNzNlYjhmMWU3OWM5YjA0M2FjZDFjMDllY2QwYzZkNWNjMGIyZTIwMWY0NTQxNDM5NTJjMTFkY2NhNDQ1Nzk2ZjI2OTkiLCJpYXQiOjE2NjAyNDMwODgsIm5iZiI6MTY2MDI0MzA4OCwiZXhwIjoxNjkxNzc5MDg4LCJzdWIiOiIxMjE0Iiwic2NvcGVzIjpbXX0.XJSLUGTZr8KXGoCA3L4EueeMHn6M1UetuyVi_u-wZ84AZ2e9xAHSNpYRgg9B2SzTR1pALAY14FnxgVMCBNA-4g`,
+        Authorization: `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiMDk4OTU2ZjQ4ZWU2NjI4NTY3N2NiYWMwMWEwYzhhZTNiNWYzMTJkZWI4MWMxNGJlZDRkOGM0M2UwNjYxYjZjNzA1NTMwM2ZhZmMyMGI4NzYiLCJpYXQiOjE2NjAzMDcyMDMsIm5iZiI6MTY2MDMwNzIwMywiZXhwIjoxNjkxODQzMjAzLCJzdWIiOiIxMjI0Iiwic2NvcGVzIjpbXX0.Rw2UG2MAuLNlQIHma8i1IbRsj80AwSNRhMnKnQH6UW3BpeLhMJmoiv6diEWmEhiAI2vbk2lrl-iXYVqNnAiWDA`,
         "Content-Type": "application/json",
       },
       data: {
@@ -90,12 +90,12 @@ function App() {
   // GET ROUTE
   const getEntry = async () => {
     const token = await user.getIdToken();
-    // console.log(token);
+    console.log(token);
     console.log(user.uid);
     const response = await fetch(URL, {
       method: "GET",
       headers: {
-        Authorization: " Bearer  " + token,
+        Authorization: " Bearer " + token,
       },
     });
     const data = await response.json();
@@ -106,19 +106,18 @@ function App() {
   // CREATE ROUTE
   const createEntry = async () => {
     const token = await user.getIdToken();
+    console.log("here" + user.uid);
     await fetch(URL, {
       method: "POST",
       headers: {
         "Content-type": "Application/json",
-        Authorization: " Bearer  " + token,
+        Authorization: " Bearer " + token,
       },
       body: JSON.stringify({
-        // distance: newForm.distance,
-        // carbon: carbonInfo,
-        date: newForm.date.toString(),
-        distance: newForm.distance.toString(),
-        carbon: carbonInfo.toString(),
-        googleId: user.uid.toString(),
+        date: newForm.date,
+        distance: newForm.distance,
+        carbon: carbonInfo,
+        googleId: user.uid,
       }),
       // body: JSON.stringify(entry),
     });
@@ -132,73 +131,73 @@ function App() {
   }, []);
 
   return (
-      <div className="App">
-        <header>
-          <button className="hamburger-icon" onClick={handleClick}>
-            <span className="material-symbols-outlined">menu</span>
-          </button>
-          <div className="homeLogo-container">
-            <Link to="/">
-              <img
-                src="/Assets/LOGO_MINT.png"
-                alt="ZeroCarbon logo"
-                className="homeLogo"
-              />
-            </Link>
-          </div>
-        </header>
-        <Navigation
-          classState={classState}
-          handleClick={handleClick}
-          user={user}
+    <div className="App">
+      <header>
+        <button className="hamburger-icon" onClick={handleClick}>
+          <span className="material-symbols-outlined">menu</span>
+        </button>
+        <div className="homeLogo-container">
+          <Link to="/">
+            <img
+              src="/Assets/LOGO_MINT.png"
+              alt="ZeroCarbon logo"
+              className="homeLogo"
+            />
+          </Link>
+        </div>
+      </header>
+      <Navigation
+        classState={classState}
+        handleClick={handleClick}
+        user={user}
+      />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Home
+              // carbonInfo={carbonInfo}
+              // setCarbonInfo={setCarbonInfo}
+              // distInput={distInput}
+              // setDistInput={setDistInput}
+              // vehTypeInput={vehTypeInput}
+              // setVehTypeInput={setVehTypeInput}
+              newForm={newForm}
+              setNewForm={setNewForm}
+              handleCalcSubmit={handleCalcSubmit}
+            />
+          }
         />
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <Home
-                // carbonInfo={carbonInfo}
-                // setCarbonInfo={setCarbonInfo}
-                // distInput={distInput}
-                // setDistInput={setDistInput}
-                // vehTypeInput={vehTypeInput}
-                // setVehTypeInput={setVehTypeInput}
-                newForm={newForm}
-                setNewForm={setNewForm}
-                handleCalcSubmit={handleCalcSubmit}
-              />
-            }
-          />
-          <Route path="/about" element={<About />} />
-          <Route path="/getinvolved" element={<GetInvolved />} />
-          <Route path="/resources" element={<Resources />} />
-          <Route path="/contactus" element={<ContactUs />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/getinvolved" element={<GetInvolved />} />
+        <Route path="/resources" element={<Resources />} />
+        <Route path="/contactus" element={<ContactUs />} />
 
-          <Route path="/account" element={<Account user={user} />} />
+        <Route path="/account" element={<Account user={user} />} />
 
-          <Route
-            path="/co2emissions"
-            element={
-              <Co2Emission
-                carbonInfo={carbonInfo}
-                user={user}
-                createEntry={createEntry}
-              />
-            }
-          />
-          <Route
-            path="/dashboard"
-            element={
-              <Dashboard
-                user={user}
-                entry={entry}
-                getEntry={getEntry}
-                setEntry={setEntry}
-              />
-            }
-          />
-        </Routes>
-      </div>
+        <Route
+          path="/co2emissions"
+          element={
+            <Co2Emission
+              carbonInfo={carbonInfo}
+              user={user}
+              createEntry={createEntry}
+            />
+          }
+        />
+        <Route
+          path="/dashboard"
+          element={
+            <Dashboard
+              user={user}
+              entry={entry}
+              getEntry={getEntry}
+              setEntry={setEntry}
+            />
+          }
+        />
+      </Routes>
+    </div>
   );
 }
 

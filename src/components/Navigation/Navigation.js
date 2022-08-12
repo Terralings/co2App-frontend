@@ -57,7 +57,7 @@ function Navigation({ classState, handleClick, user }) {
         ) : (
 
           <ul className="bottom-nav">
-            <Link to="/comingsoon" className="nav-item" onClick={handleClick}>
+            <Link to="/contactus" className="nav-item" onClick={handleClick}>
               Contact Us
             </Link>
             <div className="nav-item" onClick={login}>

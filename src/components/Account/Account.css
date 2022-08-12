@@ -1,3 +1,50 @@
-.accountHeading{
-    font-size: 64px;
+.account-container {
+    margin: -50px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #D8D7D7;
+}
+
+.accountHeader {
+    padding: 0 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.accountName span{
+    font-size: 55px;
+    font-style: italic;
+    font-weight: 700;
+}
+
+.accountName {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.accountPrompt {
+    margin-top: 0;
+    padding: 0 50px;
+    font-size: 25px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.accountBtn-container {
+    /* border: 2px solid red; */
+    height: 25vh;
+    width: 70vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
 }

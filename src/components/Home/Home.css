@@ -25,7 +25,7 @@
 }
 
 .dateMenu {
-    width: 329px;
+    width: 250px;
     height: 44px;
     background: #f1f1f1;
     border: 1px solid #c1b9b9;
@@ -44,7 +44,7 @@
 }
 
 .vehicle-dropdown {
-    width: 329px;
+    width: 250px;
     height: 44px;
     background: #f1f1f1;
     border: 1px solid #c1b9b9;
@@ -63,7 +63,7 @@
 }
 
 .userDistance {
-    width: 329px;
+    width: 250px;
     height: 44px;
     background: #f1f1f1;
     border: 1px solid #c1b9b9;

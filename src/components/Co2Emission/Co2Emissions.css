@@ -8,8 +8,8 @@
 .circleContainer{
     display: flex; 
     flex-direction: column; 
-    width: 15rem; 
-    height: 15rem;
+    width: 20rem; 
+    height: 18rem;
     justify-content: center;    
     align-items: center;
     background-image: url(../../../public/Assets/GRADIENT.png);
@@ -19,42 +19,32 @@
 }
 
 .circleText{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     color: #01E2BA; 
     font-weight:700;
-    font-size: 40px;
+    font-size: 5rem;
+    text-align: center;
     z-index: 1; 
     text-shadow: 2px 1px rgba(0, 0, 0, 0.5);
 }
 
 .kgText {
     margin: 0;
-    font-size: 1.5rem;
     padding:0;
-}
-
-.section {
-    color: #13E3C1;
-}
-
-.imgContainer {
-    position: relative;
     text-align: center;
-    padding-top: 25px;
-}
-
-.circleContainer2{
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    font-size: 1.3rem;
+    width: 4rem;
 }
 
 .buttonsContainer {
-    margin-top: 15%; 
+    height: 180px;
+    width: 200px;
     display: flex; 
-    flex-direction: column; 
-    align-items: center; 
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .login {
@@ -62,14 +52,13 @@
 }
 
 .saveResult {
-    
-            font-size: 16px;
-            background-color: #01E2BA;
-            border: black;
-            padding: 8px 33px;
-            border-radius: 13px;
-            box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.5);
-            margin: 2%;
+    font-size: 16px;
+    background-color: #01E2BA;
+    border: black;
+    padding: 8px 33px;
+    border-radius: 13px;
+    box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.5);
+    margin: 2%;
 }
 
 .newtripBtn {

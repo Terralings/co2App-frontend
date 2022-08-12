@@ -40,6 +40,8 @@ function App() {
   // const [vehTypeInput, setVehTypeInput] = useState("");
   const [carbonInfo, setCarbonInfo] = useState("");
 
+  const [empty, setEmpty] = useState(false);
+
   // FORM STATES
   const [newForm, setNewForm] = useState({
     // pointA: "",
@@ -69,18 +71,35 @@ function App() {
       .then((res) => {
         console.log(res);
         const apiInfo = res.data;
-        const { carbon } = apiInfo;
-        const adjustedCarbon = carbon.split(" ")[0];
-        const converted = parseFloat(adjustedCarbon);
-        const adjusted = Math.max(Math.round(converted * 10) / 10, 2.8).toFixed(
-          2
-        );
-        setCarbonInfo(adjusted);
+        if (apiInfo.message) {
+          setEmpty(true);
+          console.log(" api call ran out");
+        } else {
+          setEmpty(false);
+          const { carbon } = apiInfo;
+          const adjustedCarbon = carbon.split(" ")[0];
+          const converted = parseFloat(adjustedCarbon);
+          const adjusted = Math.max(
+            Math.round(converted * 10) / 10,
+            2.8
+          ).toFixed(2);
+          setCarbonInfo(adjusted);
+        }
       })
       .catch((error) => {
         console.error("Error:", error);
       });
   };
+
+  const checkAPIcall = (data) => {
+    const firstWord = data.split(" ")[0];
+    if (firstWord == "You") {
+      console.log("api calls ran out");
+    } else {
+      return data;
+    }
+  };
+
   const navigate = useNavigate();
   const handleCalcSubmit = (e) => {
     e.preventDefault();
@@ -182,6 +201,8 @@ function App() {
               carbonInfo={carbonInfo}
               user={user}
               createEntry={createEntry}
+              empty={empty}
+              setEmpty={setEmpty}
             />
           }
         />

@@ -17,7 +17,7 @@
 
 .accountName span{
     padding-right: 1rem;
-    font-size: 55px;
+    font-size: 60px;
     font-style: italic;
     font-weight: 700;
 }
@@ -27,16 +27,16 @@
     justify-content: center;
     align-items: baseline;
     flex-wrap: wrap;
-    font-size: 40px;
-    font-weight: 700;
+    font-size: 60px;
+    font-weight: 600;
     text-align: center;
 }
 
 .accountPrompt {
     margin-top: 0;
     padding: 0 50px;
-    font-size: 25px;
-    font-weight: 600;
+    font-size: 35px;
+    font-weight: 550;
     text-align: center;
 }
 

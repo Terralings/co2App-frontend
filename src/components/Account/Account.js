@@ -24,7 +24,7 @@ const Account = ({ user }) => {
       <div className="accountHeader">
         <p className="accountName">
           {" "}
-          <span>Hi {convertName(user.displayName)}</span>,
+          <span>hi </span>{convertName(user.displayName)},
         </p>
         <p className="accountPrompt">WHERE ARE WE GOING TODAY?</p>
       </div>

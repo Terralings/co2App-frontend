@@ -27,6 +27,10 @@ function Co2Emission(props) {
     navigate("/");
   };
 
+  const navigateToContacts = (e) => {
+    e.preventDefault();
+    navigate("/contactus");
+  };
   return (
     <div className="Co2Body">
       {/* Confirmation Modal */}
@@ -42,8 +46,11 @@ function Co2Emission(props) {
         ) : (
           <div className="circleText">
             <p class="errorMessage">
-              Sorry, something unexpected happened. Please contact one of the
-              engineers
+              <span onClick={navigateToContacts}>
+                {" "}
+                Sorry, something unexpected happened. Please click here to
+                contact our team{" "}
+              </span>
             </p>
           </div>
         )}

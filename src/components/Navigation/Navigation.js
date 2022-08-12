@@ -25,6 +25,7 @@ function Navigation({ classState, handleClick, user }) {
               />
             </Link>
           </div>
+
           <ul className="ul-top">
             <Link to="/about" className="nav-item" onClick={handleClick}>
               ABOUT
@@ -37,27 +38,33 @@ function Navigation({ classState, handleClick, user }) {
             </Link>
           </ul>
         </div>
+
+{/* Conditional rendering Account button if user is logged in or not */}
         {user ? (
+
           <ul className="bottom-nav">
-            <Link to="/account" className="nav-item" onClick={handleClick}>
-              Account
-            </Link>
             <Link to="/contactus" className="nav-item" onClick={handleClick}>
               Contact Us
             </Link>
-            <h1 className="nav-item" onClick={logout}>
+            <Link to="/account" className="nav-item" onClick={handleClick}>
+              Account
+            </Link>
+            <div className="nav-item" onClick={logout}>
               Logout
-            </h1>
+            </div>
           </ul>
+
         ) : (
+
           <ul className="bottom-nav">
             <Link to="/comingsoon" className="nav-item" onClick={handleClick}>
               Contact Us
             </Link>
-            <h1 className="nav-item" onClick={login}>
+            <div className="nav-item" onClick={login}>
               Log In
-            </h1>
+            </div>
           </ul>
+
         )}
       </nav>
     </div>

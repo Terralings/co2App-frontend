@@ -1,67 +1,35 @@
 * {
   box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
+}
+
+header {
+  padding: 30px 15px 0;
+  margin: 0;
 }
 
 .hamburger-icon {
   background-color: transparent;
   border: none;
   color: #01E2BA;
-  padding: 3%; 
+}
+
+.hamburger-icon span {
+  font-size: 35px;
 }
 
 .hamburger-icon:hover {
   cursor: pointer;
 }
 
-.App {
-  /* background-image: "url(/Assets/Image.png)"; */
-  /* background-attachment: scroll; */
-    background-size: cover;
-    max-width: auto;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
-    /* margin:auto; */
-    position: relative; 
-    
+.homeLogo-container {
+  display: flex;
+  justify-content: center;
 }
 
 .homeLogo {
   width: 70vw;
-  margin-left: 10%; 
-}
-
-.AppContainer {
-    background-image:
-        /* linear-gradient(to bottom,rgba(202, 201, 202, 0.9), rgba(56, 55, 55, 0.9)), */
-        var(--img);
-      background-size: cover;
-        background-attachment: fixed;
-      background-repeat: no-repeat;
-      /* background-position: 20% 20%;  */
 }
 
 .logIn {
   box-sizing: border-box;
-
-/* Auto layout */
-/* 
-display: flex;
-flex-direction: row;
-align-items: flex-start;
-padding: 8px 35px;
-gap: 8px;
-
-position: relative;
-width: 117px;
-height: 35px;
-left: 126.18px;
-top: 549.22px;
-
-background: #000000;
-border: 1px solid #000000;
-border-radius: 14px;
-
-color: white; */
 }

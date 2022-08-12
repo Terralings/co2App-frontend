@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+
+=======
 # ![ZeroCarbon Logo](https://user-images.githubusercontent.com/97856494/183988027-70d7a72c-68ec-4b02-bc8c-c9982b827048.png)
 
 ## Product Description
@@ -101,3 +104,4 @@ Created by
 - Marvin Merida [@mmarvin3](https://github.com/mmarvin3)
 - Ernesto Fernandez [UX-ER](www.ux-er.io)
 - Lena Slone
+>>>>>>> b9a57e7c0703c2004f674408f34f84aed78e7a57

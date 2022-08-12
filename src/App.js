@@ -14,7 +14,6 @@ import ContactUs from "./components/ContactUs/ContactUs";
 //FIREBASE STUFF;  MOVE IT TO RESPECTIVE LOCATION AFTERWARDS
 import { login, logout } from "../src/services/firebase";
 import { auth } from "./services/firebase";
-import { Container, Button } from "@mui/material";
 
 function App() {
   const [isActive, setIsActive] = useState(true);
@@ -131,28 +130,28 @@ function App() {
       unsubscribe();
     };
   }, []);
+
   return (
-    <Container
-      className="AppContainer"
-      style={{
-        backgroundImage: "url(/Assets/image.png",
-        backgroundAttachment: "scroll",
-      }}
-    >
       <div className="App">
         <header>
           <button className="hamburger-icon" onClick={handleClick}>
             <span className="material-symbols-outlined">menu</span>
           </button>
+          <div className="homeLogo-container">
+            <Link to="/">
+              <img
+                src="/Assets/LOGO_MINT.png"
+                alt="ZeroCarbon logo"
+                className="homeLogo"
+              />
+            </Link>
+          </div>
         </header>
         <Navigation
           classState={classState}
           handleClick={handleClick}
           user={user}
         />
-        <Link to="/">
-          <img className="homeLogo" src="/Assets/Logo_mint.png" />
-        </Link>
         <Routes>
           <Route
             path="/"
@@ -200,7 +199,6 @@ function App() {
           />
         </Routes>
       </div>
-    </Container>
   );
 }
 

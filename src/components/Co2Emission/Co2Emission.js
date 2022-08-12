@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import "./Co2Emissions.css";
-import { Button } from "@mui/material";
-import Link from "@mui/material/Link";
 import { useNavigate, Navigate } from "react-router-dom";
 import ConfirmationModal from "../../components/ConfirmationModal/ConfirmationModal.js";
 import { login, logout } from "../../services/firebase";
@@ -31,20 +29,23 @@ function Co2Emission(props) {
 
   return (
     <div className="Co2Body">
+
+      {/* Confirmation Modal */}
       {modal && <ConfirmationModal closeModal={closeModal} user={props.user} />}
+
       <div className="circleContainer">
         <p className="circleText">
           {props.carbonInfo}
           <br />
           <p className="kgText"> kg of Co2</p>
         </p>
-        <img src="/assets/gradient.png" className="gradient"></img>
       </div>
 
       {/* <div className="imgContainer">
 				<p> Cool gradient bro</p>
 				<img className="circleContainer2" src="/assets/gradient.png" />
 			</div> */}
+
       <div className="buttonsContainer">
         {props.user ? (
           <button
@@ -61,8 +62,7 @@ function Co2Emission(props) {
         )}
 
         <button
-          className="pasttripBtn newtripBtn
-"
+          className="pasttripBtn newtripBtn"
           onClick={navigateToForm}
         >
           New Trip

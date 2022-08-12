@@ -1,10 +1,9 @@
 import React from "react";
 import "./About.css";
-import { Container } from "@mui/system";
 
 function About(props) {
   return (
-    <div className="aboutBody">
+    <div className="about-container">
       <div>
         <h1>Our Mission </h1>
         <p className="about">

@@ -1,41 +1,35 @@
 .Co2Body {
+    height: 70vh;
     display: flex; 
     flex-direction: column;
-    /* background-image: url("https://wallpaperaccess.com/full/4334504.jpg"); */
-    /* background-color: black; */
-    /* background-position: center; */
-        /* background-repeat: no-repeat; */
-        background-size: cover;
-    height: 80vh;
- 
+    align-items: center;
 }
 
 .circleContainer{
     display: flex; 
-    flex-direction: column;
-    margin: auto; 
-    width: 10em; 
-    height: 10em;
-justify-content: center;    
-align-items: center;
-
+    flex-direction: column; 
+    width: 15rem; 
+    height: 15rem;
+    justify-content: center;    
+    align-items: center;
+    background-image: url(../../../public/Assets/GRADIENT.png);
     background-size: cover;
-    
     background-position: center;
     background-repeat: no-repeat;
-    
-    margin: auto;
-}
-
-.gradient {
-    position: absolute;
-    z-index: 0;
 }
 
 .circleText{
     color: #01E2BA; 
-    position: absolute;
+    font-weight:700;
+    font-size: 40px;
     z-index: 1; 
+    text-shadow: 2px 1px rgba(0, 0, 0, 0.5);
+}
+
+.kgText {
+    margin: 0;
+    font-size: 1.5rem;
+    padding:0;
 }
 
 .section {
@@ -46,23 +40,44 @@ align-items: center;
     position: relative;
     text-align: center;
     padding-top: 25px;
-
 }
 
 .circleContainer2{
     position: absolute;
-   top: 0;
-   bottom: 0;
-   left: 0;
-   right: 0;
-
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
 .buttonsContainer {
+    margin-top: 15%; 
     display: flex; 
     flex-direction: column; 
     align-items: center; 
-    justify-content: space-around;
-    margin-bottom: 30%; 
-    height: 100px;
+}
+
+.login {
+    background-color: #01E2BA;
+}
+
+.saveResult {
+    
+            font-size: 16px;
+            background-color: #01E2BA;
+            border: black;
+            padding: 8px 33px;
+            border-radius: 13px;
+            box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.5);
+            margin: 2%;
+}
+
+.newtripBtn {
+    margin: 2%; 
+}
+
+.learnMore {
+    margin: 2%;
+    color: #01E2BA;
+    text-shadow: 2px 1px rgba(0, 0, 0, 0.5);
 }

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Navigation.css";
+import { login, logout } from "../../services/firebase";
 
 function Navigation({ classState, handleClick, user }) {
   return (
@@ -24,33 +25,46 @@ function Navigation({ classState, handleClick, user }) {
               />
             </Link>
           </div>
+
           <ul className="ul-top">
             <Link to="/about" className="nav-item" onClick={handleClick}>
               ABOUT
             </Link>
-            <Link to="/comingsoon" className="nav-item" onClick={handleClick}>
+            <Link to="/resources" className="nav-item" onClick={handleClick}>
               RESOURCES
             </Link>
-            <Link to="/comingsoon" className="nav-item" onClick={handleClick}>
+            <Link to="/getinvolved" className="nav-item" onClick={handleClick}>
               GET INVOLVED
             </Link>
           </ul>
         </div>
+
+{/* Conditional rendering Account button if user is logged in or not */}
         {user ? (
+
           <ul className="bottom-nav">
-            <Link to="/dashboard" className="nav-item" onClick={handleClick}>
+            <Link to="/contactus" className="nav-item" onClick={handleClick}>
+              Contact Us
+            </Link>
+            <Link to="/account" className="nav-item" onClick={handleClick}>
               Account
             </Link>
-            <Link to="/comingsoon" className="nav-item" onClick={handleClick}>
-              Contact Us
-            </Link>
+            <div className="nav-item" onClick={logout}>
+              Logout
+            </div>
           </ul>
+
         ) : (
+
           <ul className="bottom-nav">
             <Link to="/comingsoon" className="nav-item" onClick={handleClick}>
               Contact Us
             </Link>
+            <div className="nav-item" onClick={login}>
+              Log In
+            </div>
           </ul>
+
         )}
       </nav>
     </div>

@@ -15,7 +15,6 @@ import {
 import { borders } from "@mui/system";
 
 function Dashboard(props) {
-
   useEffect(() => {
     // console.log(props.entry);
     props.getEntry();
@@ -34,6 +33,7 @@ function Dashboard(props) {
           backgroundColor: "black",
           maxWidth: "95%",
           boxShadow: 3,
+          borderRadius: "16px",
         }}
         component={Paper}
         align="center"
@@ -47,7 +47,6 @@ function Dashboard(props) {
 						</TableRow>
 					</TableHead> */}
 
-
           <TableBody
             sx={{
               justifyContent: "left",
@@ -55,7 +54,9 @@ function Dashboard(props) {
           >
             {props.entry.map((entry, index) => (
               <TableRow key={index}>
-                <TableCell style={{ color: "white" }}>{entry.carbon}</TableCell>
+                <TableCell style={{ color: "white" }}>
+                  {entry.carbon} kg of Co2
+                </TableCell>
                 <TableCell style={{ color: "white" }}>{entry.date}</TableCell>
               </TableRow>
             ))}
@@ -64,7 +65,6 @@ function Dashboard(props) {
       </TableContainer>
     </div>
   );
-
 }
 
 export default Dashboard;

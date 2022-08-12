@@ -2,27 +2,34 @@
   box-sizing: border-box;
 }
 
+header {
+  padding: 30px 15px 0;
+  margin: 0;
+}
+
 .hamburger-icon {
   background-color: transparent;
   border: none;
   color: #01E2BA;
 }
 
+.hamburger-icon span {
+  font-size: 35px;
+}
+
 .hamburger-icon:hover {
   cursor: pointer;
 }
 
-.App {
-  /* background-image: "url(/Assets/Image.png)"; */
-    background-size: cover;
-    max-width: auto;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
-    margin:auto;
+.homeLogo-container {
+  display: flex;
+  justify-content: center;
 }
 
 .homeLogo {
   width: 70vw;
-  margin-left: 10%; 
+}
+
+.logIn {
+  box-sizing: border-box;
 }

@@ -39,9 +39,8 @@ function Navigation({ classState, handleClick, user }) {
           </ul>
         </div>
 
-{/* Conditional rendering Account button if user is logged in or not */}
+        {/* Conditional rendering Account button if user is logged in or not */}
         {user ? (
-
           <ul className="bottom-nav">
             <Link to="/contactus" className="nav-item" onClick={handleClick}>
               Contact Us
@@ -49,22 +48,19 @@ function Navigation({ classState, handleClick, user }) {
             <Link to="/account" className="nav-item" onClick={handleClick}>
               Account
             </Link>
-            <div className="nav-item" onClick={logout}>
+            <a className="nav-item" onClick={logout}>
               Logout
-            </div>
+            </a>
           </ul>
-
         ) : (
-
           <ul className="bottom-nav">
             <Link to="/contactus" className="nav-item" onClick={handleClick}>
               Contact Us
             </Link>
-            <div className="nav-item" onClick={login}>
+            <a className="nav-item" onClick={login}>
               Log In
-            </div>
+            </a>
           </ul>
-
         )}
       </nav>
     </div>

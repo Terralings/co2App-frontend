@@ -8,7 +8,9 @@ a {
     width: 253px;
     z-index: 5;
 }
-
+.nav-item :hover{
+    cursor:pointer;
+}
 .nav.active {
     display: flex;
 }

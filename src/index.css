@@ -4,7 +4,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.85), rgba(55, 55, 55, 0.9)), url(../public/Assets/bgImage.png);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.85), rgba(55, 55, 55, 0.8)), url(../public/Assets/bgImage.png);
   background-attachment: fixed;
   background-size: cover;
   background-position: center;

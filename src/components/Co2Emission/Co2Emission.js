@@ -35,7 +35,7 @@ function Co2Emission(props) {
 
       <div className="circleContainer">
         <p className="circleText">
-          {props.carbonInfo}32
+          {props.carbonInfo}
           <br />
           <p className="kgText"> kg of Co2</p>
         </p>
@@ -62,7 +62,7 @@ function Co2Emission(props) {
         >
           New Trip
         </button>
-        
+
         <a className="learnMore" href="/about">
           Learn More...
         </a>

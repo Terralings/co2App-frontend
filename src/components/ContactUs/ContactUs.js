@@ -2,7 +2,7 @@ import "./ContactUs.css";
 
 const ContactUs = () => {
   return (
-    <div>
+    <div className='contactUs-container'>
       <h1> About the founders</h1>
       <p>
         Zero Carbon was founded and built by the Terraling team!
@@ -63,7 +63,7 @@ const ContactUs = () => {
             href="https://www.linkedin.com/in/lena-slone-5bb2b4231/"
             target="_blank"
           >
-            Lena Stone
+            Lena Slone
           </a>
         </li>
       </ul>

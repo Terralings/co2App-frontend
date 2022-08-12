@@ -15,19 +15,21 @@ const Account = ({ user }) => {
     navigate("/dashboard");
   };
 
+  const convertName = (fullname) => {
+    const firstName = fullname.split(" ")[0];
+    return firstName;
+  };
   return (
-    <div className='account-container'>
-      <div className='accountHeader'>
+    <div className="account-container">
+      <div className="accountHeader">
         <p className="accountName">
           {" "}
-          <span>hi </span> {user.displayName},
+          <span>Hi {convertName(user.displayName)}</span>,
         </p>
-        <p className='accountPrompt'>
-          WHERE ARE WE GOING TODAY?
-        </p>
+        <p className="accountPrompt">WHERE ARE WE GOING TODAY?</p>
       </div>
 
-      <div className='accountBtn-container'>
+      <div className="accountBtn-container">
         <Button
           color="primary"
           variant="contained"
@@ -68,7 +70,7 @@ const Account = ({ user }) => {
         >
           View Past Trips
         </Button>
-        <div className='learnMoreBtn'>
+        <div className="learnMoreBtn">
           <Link href="/about">Learn More</Link>
         </div>
       </div>

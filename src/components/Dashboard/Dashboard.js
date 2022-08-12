@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import "./Dashboard.css";
 import Co2Emission from "../Co2Emission/Co2Emission";
-
 import {
   Table,
   TableBody,
@@ -12,7 +11,6 @@ import {
   Paper,
   Typography,
 } from "@mui/material";
-import { borders } from "@mui/system";
 
 function Dashboard(props) {
   useEffect(() => {
@@ -21,7 +19,7 @@ function Dashboard(props) {
     console.log(props.entry + "from useeffect on dashboard");
   }, [props.user]);
   return (
-    <div>
+    <div className='dashboard-container'>
       <h4>Past Trips</h4>
       {/* 
       {props.entry.map((entry, index) => (

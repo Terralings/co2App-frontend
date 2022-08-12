@@ -31,6 +31,13 @@ header {
 .homeLogo {
   width: 70vw;
 }
+
+@media only screen and (max-width: 300px) {
+  .homeLogo {
+    width: 60vw;
+  }
+}
+
 @media only screen and (min-width: 992px) {
   .homeLogo {
     width: 30vw;

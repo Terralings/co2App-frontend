@@ -1,7 +1,7 @@
 # ![ZeroCarbon Logo](https://user-images.githubusercontent.com/97856494/183988027-70d7a72c-68ec-4b02-bc8c-c9982b827048.png)
 
 ## Product Description
->Zero Carbon is an app to track a user's carbon emissions from car transportation. The goal is to bring more awareness to one's carbon emission contribution and inspire action to decrease their foot print on the environment.
+>Zero Carbon is an app that tracks a user's carbon emissions from car transportation. The goal is to bring more awareness to one's carbon emission contribution and inspire action to decrease their foot print on the environment.
 
 ## Link To Deployed App:
 https://zerocarbon.netlify.app/
